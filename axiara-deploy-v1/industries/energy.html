@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry: Energy & Utilities | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            'energy-gold': '#FFBF00', // Energy utility accent
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulseSlow 4s infinite ease-in-out',
+                        'energy-flow': 'energyFlow 3s infinite linear',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        },
+                        energyFlow: {
+                            '0%': { strokeDashoffset: '1000' },
+                            '100%': { strokeDashoffset: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Energy Flow Animation */
+        .grid-line {
+            stroke-dasharray: 20 20;
+            animation: energyFlow 2s linear infinite;
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden text-center">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <!-- Smart Grid Visual Background -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+            <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="grid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFBF00;stop-opacity:0" />
+                        <stop offset="50%" style="stop-color:#FFBF00;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#FFBF00;stop-opacity:0" />
+                    </linearGradient>
+                </defs>
+                <!-- Horizontal Flow Lines -->
+                <line x1="0" y1="100" x2="800" y2="100" stroke="url(#grid-grad)" stroke-width="1" class="grid-line" />
+                <line x1="0" y1="300" x2="800" y2="300" stroke="url(#grid-grad)" stroke-width="1" class="grid-line"
+                    style="animation-duration: 3s;" />
+                <line x1="0" y1="500" x2="800" y2="500" stroke="url(#grid-grad)" stroke-width="1" class="grid-line"
+                    style="animation-duration: 2.5s;" />
+
+                <!-- Vertical Flow Lines -->
+                <line x1="200" y1="0" x2="200" y2="600" stroke="url(#grid-grad)" stroke-width="1" class="grid-line"
+                    style="animation-direction: reverse;" />
+                <line x1="400" y1="0" x2="400" y2="600" stroke="url(#grid-grad)" stroke-width="1" class="grid-line"
+                    style="animation-duration: 4s;" />
+                <line x1="600" y1="0" x2="600" y2="600" stroke="url(#grid-grad)" stroke-width="1" class="grid-line"
+                    style="animation-direction: reverse; animation-duration: 3.5s;" />
+
+                <!-- Nodes -->
+                <circle cx="200" cy="100" r="3" fill="#FFBF00" class="animate-pulse-slow" />
+                <circle cx="400" cy="300" r="3" fill="#FFBF00" class="animate-pulse-slow"
+                    style="animation-delay: 1s;" />
+                <circle cx="600" cy="500" r="3" fill="#FFBF00" class="animate-pulse-slow"
+                    style="animation-delay: 2s;" />
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span
+                class="inline-block font-code text-xs text-axiara-energy-gold uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-charcoal border border-axiara-energy-gold/20 px-3 py-1">
+                Industry — Energy & Utilities
+            </span>
+            <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-6 animate-fade-in-up delay-[200ms]">
+                Powering The<br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-b from-axiara-energy-gold to-yellow-600">Infinite.</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-phil italic text-axiara-silver mb-10 animate-fade-in-up delay-[400ms]">
+                Stability in the era of decentralized energy.
+            </h2>
+            <div class="animate-fade-in-up delay-[600ms] flex justify-center gap-6">
+                <a href="#use-cases"
+                    class="inline-flex justify-center items-center bg-transparent border border-axiara-energy-gold text-axiara-energy-gold font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-energy-gold hover:text-black transition-colors shadow-[0_0_15px_rgba(255,191,0,0.2)]">
+                    Explore Grid Solutions
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE CHALLENGE -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/10">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <class="text-axiara-crimson font-code text-sm uppercase tracking-widest mb-4" class="text-axiara-silver font-code text-sm uppercase tracking-widest mb-4">The Challenge</h3>
+                <h2 class="text-4xl md:text-5xl font-phil text-axiara-white leading-tight mb-6">
+                    Transition & Stability.
+                </h2>
+                <p class="text-lg text-axiara-silver leading-relaxed">
+                    Integrating renewables into an aging grid creates unprecedented volatility. Compliance with NERC CIP
+                    and ESG standards requires more than monitoring—it demands predictive governance.
+                </p>
+            </div>
+            <div
+                class="relative h-64 bg-axiara-charcoal/30 border border-axiara-white/5 flex items-center justify-center overflow-hidden">
+                <!-- Abstract Visual: Volatility Wave -->
+                <svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="none">
+                    <path d="M0,100 Q100,50 200,100 T400,100" fill="none" stroke="#FFBF00" stroke-width="2"
+                        class="opacity-50">
+                        <animate attributeName="d" dur="5s" repeatCount="indefinite"
+                            values="M0,100 Q100,50 200,100 T400,100; M0,100 Q100,150 200,100 T400,100; M0,100 Q100,50 200,100 T400,100" />
+                    </path>
+                    <path d="M0,100 Q100,150 200,100 T400,100" fill="none" stroke="#C41E3A" stroke-width="2"
+                        class="opacity-50">
+                        <animate attributeName="d" dur="5s" repeatCount="indefinite"
+                            values="M0,100 Q100,150 200,100 T400,100; M0,100 Q100,50 200,100 T400,100; M0,100 Q100,150 200,100 T400,100" />
+                    </path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. USE CASES (The Triad) -->
+    <section id="use-cases" class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1: Smart Grid -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-axiara-energy-gold/50 transition-colors h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-axiara-energy-gold/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <i data-lucide="zap" class="w-10 h-10 text-axiara-energy-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Smart Grid Load Balancing</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Optimize distribution in real-time. Axiara audits the reinforcement learning algorithms managing
+                        renewable integration to prevent blackouts and ensure grid stability.
+                    </p>
+                    <ul class="space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2 text-xs font-code text-gray-400">
+                            <i data-lucide="check" class="w-3 h-3 text-green-500"></i> Voltage Stability Audit
+                        </li>
+                        <li class="flex items-center gap-2 text-xs font-code text-gray-400">
+                            <i data-lucide="check" class="w-3 h-3 text-green-500"></i> Priority Feeder
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Predictive Maintenance -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-axiara-crimson/50 transition-colors h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-axiara-crimson/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <i data-lucide="wrench" class="w-10 h-10 text-axiara-crimson mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Predictive Asset Maintenance</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Prevent turbine and transformer failure. Validate the integrity of sensor inputs and the
+                        accuracy of maintenance prediction models to extend asset life.
+                    </p>
+                    <ul class="space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2 text-xs font-code text-gray-400">
+                            <i data-lucide="check" class="w-3 h-3 text-green-500"></i> Sensor Drift Detection
+                        </li>
+                        <li class="flex items-center gap-2 text-xs font-code text-gray-400">
+                            <i data-lucide="check" class="w-3 h-3 text-green-500"></i> Anomaly Alerting
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Carbon Verification -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-green-500/50 transition-colors h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <i data-lucide="leaf" class="w-10 h-10 text-green-500 mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Carbon Credit Verification</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Automated ESG reporting you can trust. Generate immutable audit trails for carbon offset
+                        calculations, ensuring compliance with global sustainability standards.
+                    </p>
+                    <ul class="space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2 text-xs font-code text-gray-400">
+                            <i data-lucide="check" class="w-3 h-3 text-green-500"></i> ISO 14001 Audit
+                        </li>
+                        <li class="flex items-center gap-2 text-xs font-code text-gray-400">
+                            <i data-lucide="check" class="w-3 h-3 text-green-500"></i> Offset Lineage
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. REGULATORY MATRIX -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-eng font-bold text-axiara-white mb-12 text-center">Infrastructure Compliance</h2>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-axiara-white/20">
+                            <th class="p-4 font-code text-xs text-axiara-silver uppercase tracking-widest">Standard</th>
+                            <th class="p-4 font-code text-xs text-axiara-silver uppercase tracking-widest">Requirement
+                            </th>
+                            <th class="p-4 font-code text-xs text-axiara-energy-gold uppercase tracking-widest">Axiara
+                                Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-axiara-white/5 hover:bg-white/5 transition-colors">
+                            <td class="p-4 font-bold text-white">NERC CIP</td>
+                            <td class="p-4 text-axiara-silver">Critical Infrastructure Protection security controls.
+                            </td>
+                            <td class="p-4 text-white">Continuous vulnerability scanning validation.</td>
+                        </tr>
+                        <tr class="border-b border-axiara-white/5 hover:bg-white/5 transition-colors">
+                            <td class="p-4 font-bold text-white">FERC</td>
+                            <td class="p-4 text-axiara-silver">Fair energy market practices & monitoring.</td>
+                            <td class="p-4 text-white">Algorithmic trading surveillance & anti-gaming.</td>
+                        </tr>
+                        <tr class="border-b border-axiara-white/5 hover:bg-white/5 transition-colors">
+                            <td class="p-4 font-bold text-white">ESG / ISO</td>
+                            <td class="p-4 text-axiara-silver">Environmental reporting and carbon tracking.</td>
+                            <td class="p-4 text-white">Cryptographically verified carbon data lineage.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CASE STUDY -->
+    <section class="py-24 bg-axiara-gradient relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('/assets/images/grid.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+
+            <span
+                class="inline-block px-3 py-1 border border-axiara-energy-gold text-axiara-energy-gold font-code text-xs uppercase tracking-widest mb-6">
+                Result: National European Utility
+            </span>
+            <blockquote class="text-3xl md:text-5xl font-phil text-axiara-white mb-12">
+                "We recovered €22M annually by reducing renewable curtailment with governed AI."
+            </blockquote>
+
+            <div class="flex flex-col md:flex-row justify-center gap-16 border-t border-axiara-white/10 pt-12">
+                <div>
+                    <span class="block text-6xl font-black text-axiara-energy-gold mb-2">40%</span>
+                    <span class="text-xs font-code text-axiara-silver uppercase tracking-widest">Curtailment
+                        Reduction</span>
+                </div>
+                <div>
+                    <span class="block text-6xl font-black text-white mb-2"><i data-lucide="euro"
+                            class="w-12 h-12 inline-block"></i>22M</span>
+                    <span class="text-xs font-code text-axiara-silver uppercase tracking-widest">Revenue Recovery</span>
+                </div>
+                <div>
+                    <span class="block text-6xl font-black text-green-500 mb-2">100%</span>
+                    <span class="text-xs font-code text-axiara-silver uppercase tracking-widest">NERC CIP
+                        Compliance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-obsidian text-center border-t border-axiara-energy-gold/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Future-proof your grid.
+        </h2>
+        <a href="#"
+            class="inline-flex items-center bg-axiara-energy-gold text-black font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-yellow-400 transition-colors shadow-[0_0_20px_rgba(255,191,0,0.4)]">
+            <i data-lucide="zap" class="w-4 h-4 mr-2"></i> Deploy Axiara Core
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

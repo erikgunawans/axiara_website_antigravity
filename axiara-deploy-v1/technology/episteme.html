@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTRJ Episteme | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 4s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.03' },
+                            '50%': { opacity: '0.08' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Custom Glow for Hero Title */
+        .title-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(196, 30, 58, 0.8) 0%, rgba(13, 13, 13, 0) 70%);
+            filter: blur(60px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Frosted Glass Override */
+        .glass-card {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <!-- Pulsing Glow Behind Title -->
+            <div class="title-glow animate-pulse-glow"></div>
+
+            <class="inline-block font-code text-xs text-axiara-crimson uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up" class="inline-block font-code text-xs text-axiara-silver uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up">
+                Technology — Axiom Engine
+            </span>
+            <h1 class="text-hero md: ] font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-4 animate-fade-in-up delay-[200ms]">
+                NTRJ Episteme
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-phil italic text-axiara-silver mb-8 animate-fade-in-up delay-[400ms]">
+                The Glass Box
+            </h2>
+            <p
+                class="font-eng font-light text-axiara-silver text-lg max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up delay-[600ms]">
+                "We do not ask organizations to trust AI. We enable them to inspect, review, and defend AI-assisted
+                decisions."
+            </p>
+            <div class="animate-fade-in-up delay-[800ms]">
+                <href="#capabilities"
+                    class="inline-flex items-center text-axiara-white font-code text-xs uppercase tracking-axiara-label border border-axiara-white/20 px-8 py-4 hover:border-axiara-crimson hover:text-axiara-crimson transition-all duration-300" href="#capabilities"
+                    class="inline-flex items-center text-axiara-white font-code text-xs uppercase tracking-axiara-label border border-axiara-white/20 px-8 py-4 hover:border-axiara-crimson hover:text-axiara-crimson transition-all duration-300">
+                    Explore Capabilities <i data-lucide="arrow-down" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. WHAT IT IS (Definition) -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left Line Accent -->
+            <div class="hidden lg:block lg:col-span-1 h-full relative">
+                <div class="absolute inset-y-0 right-0 w-[1px] bg-axiara-crimson"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="lg:col-span-8">
+                <h2 class="text-3xl md:text-4xl font-phil italic text-axiara-silver mb-8">
+                    Transparency at the workflow level
+                </h2>
+                <div class="space-y-6 font-eng font-light text-lg leading-relaxed text-axiara-silver">
+                    <p>
+                        NTRJ Episteme is a transparency layer for AI workflows that enables teams to clearly see how
+                        inputs, context, and AI-based transformations combine to produce outputs.
+                    </p>
+                    <p>
+                        It does not replace models, does not modify model weights, and does not require retraining. It
+                        operates around existing AI tools, providing a rigorous audit trail for every automated action.
+                    </p>
+                </div>
+                <div class="mt-12 pt-8 border-t border-axiara-white/5">
+                    <class="font-code text-xs text-axiara-crimson uppercase tracking-widest" class="font-code text-xs text-axiara-silver uppercase tracking-widest">
+                        Developed by NATARAJA Pte. Ltd. (Singapore)
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. KEY CAPABILITIES (Grid) -->
+    <section id="capabilities" class="py-24 bg-axiara-gradient relative">
+        <div class="absolute inset-0 weave-bg opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+                <div class="glass-card p-8 hover:bg-axiara-glass-hover transition-colors duration-300 group">
+                    <i data-lucide="file-input"
+                        class="text-axiara-white w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-eng font-bold text-axiara-white uppercase mb-3">Explicit Input Visibility
+                    </h3>
+                    <p class="font-eng font-light text-axiara-silver text-sm leading-relaxed">
+                        Every decision traceable to a specific document in the Aksara Vector Core. No hallucinated
+                        sources.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-8 hover:bg-axiara-glass-hover transition-colors duration-300 group">
+                    <i data-lucide="layers"
+                        class="text-axiara-white w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-eng font-bold text-axiara-white uppercase mb-3">Transparent Context Control
+                    </h3>
+                    <p class="font-eng font-light text-axiara-silver text-sm leading-relaxed">
+                        CRO can verify no unauthorized data or bias-inducing prompts influenced a decision.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-8 hover:bg-axiara-glass-hover transition-colors duration-300 group">
+                    <i data-lucide="git-branch"
+                        class="text-axiara-white w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-eng font-bold text-axiara-white uppercase mb-3">Structured Reasoning Steps
+                    </h3>
+                    <p class="font-eng font-light text-axiara-silver text-sm leading-relaxed">
+                        Raw LLM reasoning translated into executive-readable Logic Maps (visual flowcharts, not code).
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-8 hover:bg-axiara-glass-hover transition-colors duration-300 group">
+                    <i data-lucide="replace"
+                        class="text-axiara-white w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-eng font-bold text-axiara-white uppercase mb-3">Add vs. Replace Tracking
+                    </h3>
+                    <p class="font-eng font-light text-axiara-silver text-sm leading-relaxed">
+                        Full decision-state versioning. CRO sees how conclusions evolved and when prior reasoning was
+                        invalidated.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card p-8 hover:bg-axiara-glass-hover transition-colors duration-300 group">
+                    <i data-lucide="history"
+                        class="text-axiara-white w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-eng font-bold text-axiara-white uppercase mb-3">Reviewable Decision Lineage
+                    </h3>
+                    <p class="font-eng font-light text-axiara-silver text-sm leading-relaxed">
+                        Post-hoc reconstruction without reliance on screenshots, assumptions, or informal narratives.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card p-8 hover:bg-axiara-glass-hover transition-colors duration-300 group">
+                    <i data-lucide="user-check"
+                        class="text-axiara-white w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-eng font-bold text-axiara-white uppercase mb-3">Human Oversight Support</h3>
+                    <p class="font-eng font-light text-axiara-silver text-sm leading-relaxed">
+                        Axiara layers the Accountability Map: every automated step assigned a human Logic Owner.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. THE DIFFERENTIATOR (Comparison Table) -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 border border-axiara-white/10 relative">
+                <!-- Vertical Divider -->
+                <div class="hidden md:block absolute inset-y-0 left-1/2 w-[1px] bg-axiara-crimson z-10"></div>
+
+                <!-- Left Column (Traditional xAI) -->
+                <div class="bg-axiara-charcoal/50 p-8 md:p-12">
+                    <h3 class="font-code text-sm text-axiara-silver uppercase tracking-widest mb-12 opacity-70">
+                        Traditional xAI</h3>
+
+                    <div class="space-y-8 font-eng font-light text-axiara-silver/60">
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1">Focus</span>
+                            <p>Model internals, feature attribution</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1">Output</span>
+                            <p>SHAP plots, statistical explanations</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1">Audience</span>
+                            <p>Data Scientists</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1">Answers</span>
+                            <p>"Which variable mattered most"</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1">Classification</span>
+                            <p>Research Tool</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (NTRJ Episteme) -->
+                <div class="bg-axiara-gradient p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-axiara-crimson opacity-5 blur-[80px]"></div>
+                    <h3
+                        class="font-code text-sm text-axiara-white uppercase tracking-widest mb-12 border-b-2 border-axiara-crimson inline-block pb-1">
+                        NTRJ Episteme</h3>
+
+                    <div class="space-y-8 font-eng font-light text-axiara-white">
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1 text-axiara-crimson">Focus</span>
+                            <p>Workflow-level reasoning</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1 text-axiara-crimson">Output</span>
+                            <p>Episteme Logic Maps (visual flowcharts)</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1 text-axiara-crimson">Audience</span>
+                            <p>CRO, Board, DPO</p>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase mb-1 text-axiara-crimson">Answers</span>
+                            <p>"Which document was used, which regulation applied"</p>
+                        </div>
+                        <div>
+                            <span
+                                class="block text-xs font-bold uppercase mb-1 text-axiara-crimson">Classification</span>
+                            <p>Liability Shield</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boardroom Translation Pull Quote -->
+            <div class="mt-16 max-w-4xl mx-auto pl-8 border-l-2 border-axiara-crimson">
+                <blockquote class="font-phil italic text-2xl text-axiara-white leading-relaxed mb-4">
+                    "A SHAP plot tells a data scientist which variable mattered most. An Episteme Logic Map tells a CRO
+                    which company document was used, which regulatory constraint was applied, and which human approved
+                    the output."
+                </blockquote>
+                <class="not-italic font-code text-xs text-axiara-crimson uppercase tracking-widest" class="not-italic font-code text-xs text-axiara-silver uppercase tracking-widest">
+                    — §2.2.2, Axiara Master Manual
+                </cite>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. INTEGRATION ARCHITECTURE -->
+    <section class="py-24 bg-axiara-gradient relative overflow-hidden">
+        <div class="absolute inset-0 weave-bg opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center">
+
+            <!-- Architecture Visual (HTML/CSS) -->
+            <div class="relative py-12">
+                <!-- Top Block -->
+                <div
+                    class="w-full md:w-2/3 mx-auto bg-axiara-charcoal border border-axiara-white/10 p-6 mb-8 -none">
+                    <h4 class="font-code text-sm text-axiara-silver uppercase tracking-widest">Existing AI Models</h4>
+                    <p class="text-xs text-axiara-silver/50 mt-2">(unchanged, no retraining)</p>
+                </div>
+
+                <!-- Connection Lines -->
+                <div class="w-[1px] h-8 bg-axiara-white/10 mx-auto mb-1"></div>
+                <div class="w-[1px] h-8 bg-axiara-white/10 mx-auto mb-8"></div>
+
+                <!-- Middle Block (Episteme) -->
+                <div
+                    class="w-full md:w-3/4 mx-auto glass-card border border-axiara-crimson p-8 mb-8 -none relative shadow-[0_0_30px_rgba(196,30,58,0.1)]">
+                    <h4 class="font-eng font-bold text-xl text-axiara-white uppercase tracking-wider mb-2">NTRJ Episteme
+                        Layer</h4>
+                    <class="font-code text-xs text-axiara-crimson uppercase tracking-widest" class="font-code text-xs text-axiara-silver uppercase tracking-widest">transparency · audit ·
+                        lineage</p>
+                </div>
+
+                <!-- Connection Lines -->
+                <div class="w-[1px] h-8 bg-axiara-white/10 mx-auto mb-1"></div>
+                <div class="w-2/3 h-[1px] bg-axiara-white/10 mx-auto mb-1"></div> <!-- Horizontal branch -->
+                <div class="flex justify-between w-2/3 mx-auto mb-8">
+                    <div class="w-[1px] h-8 bg-axiara-white/10"></div>
+                    <div class="w-[1px] h-8 bg-axiara-white/10"></div>
+                    <div class="w-[1px] h-8 bg-axiara-white/10"></div>
+                </div>
+
+                <!-- Bottom Blocks -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                    <div class="bg-axiara-charcoal border border-axiara-white/10 p-4">
+                        <span class="block font-eng font-bold text-axiara-white">Financial Services</span>
+                    </div>
+                    <div class="bg-axiara-charcoal border border-axiara-white/10 p-4">
+                        <span class="block font-eng font-bold text-axiara-white">Healthcare</span>
+                    </div>
+                    <div class="bg-axiara-charcoal border border-axiara-white/10 p-4">
+                        <span class="block font-eng font-bold text-axiara-white">Energy & Util</span>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span class="font-code text-xs text-axiara-silver/50 uppercase tracking-widest">Regulated
+                        Environments</span>
+                </div>
+            </div>
+
+            <!-- Info Cards Below Diagram -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
+                <div class="p-6 border-l border-axiara-white/10">
+                    <i data-lucide="shield-off" class="text-axiara-crimson w-6 h-6 mb-4"></i>
+                    <p class="font-eng text-sm text-axiara-silver">Does not replace models or modify weights.</p>
+                </div>
+                <div class="p-6 border-l border-axiara-white/10">
+                    <i data-lucide="zap" class="text-axiara-crimson w-6 h-6 mb-4"></i>
+                    <p class="font-eng text-sm text-axiara-silver">Zero-disruption deployment over existing AI stacks.
+                    </p>
+                </div>
+                <div class="p-6 border-l border-axiara-white/10">
+                    <i data-lucide="building-2" class="text-axiara-crimson w-6 h-6 mb-4"></i>
+                    <p class="font-eng text-sm text-axiara-silver">Designed for compliance-heavy sectors.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. BOARDROOM TRANSLATION BAND -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5">
+        <div class="bg-axiara-crimson-glow py-16">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-phil italic text-axiara-silver mb-6">
+                    "From research tool to liability shield"
+                </h2>
+                <p class="font-eng font-light text-axiara-silver text-lg">
+                    Episteme serves as the critical transparency component that makes ISO 42001 certification achievable
+                    for enterprise AI deployments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA BAND -->
+    <section class="py-24 bg-axiara-obsidian relative overflow-hidden">
+        <!-- Diagnonal Line -->
+        <div class="absolute inset-0 pointer-events-none">
+            <svg class="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none">
+                <line x1="0" y1="100%" x2="100%" y2="0" stroke="#C41E3A" stroke-width="1" opacity="0.2" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-phil italic text-axiara-white mb-10">
+                See your AI clearly.
+            </h2>
+            <a href="#"
+                class="inline-block bg-transparent border border-axiara-silver text-axiara-white font-code text-sm uppercase tracking-axiara-label px-10 py-4 hover:bg-axiara-white hover:text-axiara-obsidian transition-colors duration-300">
+                Book a Demo &rarr;
+            </a>
+            <div class="mt-12">
+                <span class="font-code text-xs text-axiara-silver/40 uppercase tracking-widest">
+                    Powered by NATARAJA Pte. Ltd. (Singapore)
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

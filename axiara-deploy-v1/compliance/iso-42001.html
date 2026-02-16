@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance: ISO 42001 (AIMS) | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            'iso-blue': '#005BBB', // ISO Standard Blue
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(0,91,187,0.03) 0px, rgba(0,91,187,0.03) 1px, transparent 1px, transparent 10px)',
+                        'blueprint-grid': 'linear-gradient(rgba(0,91,187,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,91,187,0.1) 1px, transparent 1px)',
+                    },
+                    backgroundSize: {
+                        'blueprint': '40px 40px',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'scan': 'scan 4s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scan: {
+                            '0%': { top: '0%' },
+                            '100%': { top: '100%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        .blueprint-bg {
+            background-image: var(--axiara-blueprint-grid);
+            background-size: 40px 40px;
+        }
+
+        /* Isometric Cube */
+        .iso-cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(60deg) rotateZ(45deg);
+        }
+
+        .iso-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(0, 91, 187, 0.5);
+            background: rgba(0, 91, 187, 0.1);
+        }
+
+        .iso-face-top {
+            transform: translateZ(100px);
+            background: rgba(0, 91, 187, 0.05);
+        }
+
+        .iso-face-bottom {
+            transform: translateZ(-100px);
+        }
+
+        .iso-face-1 {
+            transform: rotateY(0deg) translateZ(100px);
+            height: 200px;
+        }
+
+        .iso-face-2 {
+            transform: rotateY(90deg) translateZ(100px);
+            width: 200px;
+        }
+
+        .iso-face-3 {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .iso-face-4 {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-iso-blue selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden text-center">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+        <div class="absolute inset-0 blueprint-bg opacity-10 pointer-events-none"></div>
+
+        <!-- Isometric System Visual -->
+        <div
+            class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none perspective-[1000px]">
+            <!-- Simplified CSS Isometric shape representing AIMS Structure -->
+            <div class="iso-cube animate-float">
+                <div class="iso-face iso-face-top"></div>
+                <div class="iso-face iso-face-bottom"></div>
+                <!-- Inner Core -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] bg-axiara-iso-blue/20 blur-xl">
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span
+                class="inline-block font-code text-xs text-axiara-iso-blue uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-charcoal border border-axiara-iso-blue/20 px-3 py-1">
+                Compliance — ISO/IEC 42001:2023
+            </span>
+            <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-6 animate-fade-in-up delay-[200ms]">
+                The Global<br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-axiara-iso-blue to-blue-400">Standard.</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-phil italic text-axiara-silver mb-10 animate-fade-in-up delay-[400ms]">
+                The world's first AI Management System (AIMS).
+            </h2>
+            <div class="animate-fade-in-up delay-[600ms] flex justify-center gap-6">
+                <a href="#clauses"
+                    class="inline-flex justify-center items-center bg-transparent border border-axiara-iso-blue text-axiara-iso-blue font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-iso-blue hover:text-white transition-colors shadow-[0_0_15px_rgba(0,91,187,0.2)]">
+                    Explore The Framework
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE MANDATE -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-axiara-iso-blue font-code text-sm uppercase tracking-widest mb-6">Why ISO 42001?</h3>
+            <h2 class="text-4xl md:text-5xl font-phil text-axiara-white leading-tight mb-8">
+                Trust is no longer abstract.<br>It is certified.
+            </h2>
+            <p class="text-lg text-axiara-silver leading-relaxed">
+                ISO/IEC 42001 is the first global standard specifying requirements for establishing, implementing,
+                maintaining, and continually improving an Artificial Intelligence Management System (AIMS). It provides
+                the verifiable proof that your organization governs AI responsibly.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. CORE CLAUSES (The System / PDCA) -->
+    <section id="clauses" class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Clause 4-5: Context & Leadership -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-iso-blue/50 transition-colors">
+                    <div class="absolute top-0 right-0 p-4 font-code text-xs text-axiara-silver opacity-50">PLAN</div>
+                    <i data-lucide="building-2" class="w-10 h-10 text-axiara-iso-blue mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Context & Leadership (Clauses 4-5)</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Define the scope of your AIMS. Establish the AI Policy, assign roles and responsibilities, and
+                        ensure top management commitment to responsible AI.
+                    </p>
+                    <div class="w-full bg-gray-800 h-1 mt-4 relative overflow-hidden">
+                        <div class="absolute h-full w-1/4 bg-axiara-iso-blue"></div>
+                    </div>
+                </div>
+
+                <!-- Clause 6-7: Planning & Support -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-iso-blue/50 transition-colors">
+                    <div class="absolute top-0 right-0 p-4 font-code text-xs text-axiara-silver opacity-50">DO</div>
+                    <i data-lucide="scroll-text" class="w-10 h-10 text-axiara-iso-blue mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Planning & Support (Clauses 6-7)</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Conduct AI risk assessments (impact analysis). Ensure resources, competence, awareness, and
+                        documented information are available for the AIMS.
+                    </p>
+                    <div class="w-full bg-gray-800 h-1 mt-4 relative overflow-hidden">
+                        <div class="absolute h-full w-2/4 bg-axiara-iso-blue"></div>
+                    </div>
+                </div>
+
+                <!-- Clause 8: Operation -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-iso-blue/50 transition-colors">
+                    <div class="absolute top-0 right-0 p-4 font-code text-xs text-axiara-silver opacity-50">CHECK</div>
+                    <i data-lucide="cogs" class="w-10 h-10 text-axiara-iso-blue mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Operation (Clause 8)</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Operational planning and control. Manage the AI system lifecycle, from design and development to
+                        deployment and monitoring.
+                    </p>
+                    <div class="w-full bg-gray-800 h-1 mt-4 relative overflow-hidden">
+                        <div class="absolute h-full w-3/4 bg-axiara-iso-blue"></div>
+                    </div>
+                </div>
+
+                <!-- Clause 9-10: Improvement -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-iso-blue/50 transition-colors">
+                    <div class="absolute top-0 right-0 p-4 font-code text-xs text-axiara-silver opacity-50">ACT</div>
+                    <i data-lucide="bar-chart-3" class="w-10 h-10 text-axiara-iso-blue mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Performance & Improvement (9-10)</h3>
+                    <p class="text-sm text-axiara-silver mb-6 leading-relaxed">
+                        Internal audit and management review. Monitor, measure, analyze, and evaluate the AIMS
+                        performance. Take corrective actions.
+                    </p>
+                    <div class="w-full bg-gray-800 h-1 mt-4 relative overflow-hidden">
+                        <div class="absolute h-full w-full bg-axiara-iso-blue"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GAP ANALYSIS TOOL -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-eng font-bold text-axiara-white mb-6">Automated Gap Analysis</h2>
+                <p class="text-axiara-silver text-lg mb-8">
+                    Stop using spreadsheets. Axiara's module automatically maps your existing controls to ISO 42001
+                    requirements, visualizing your readiness in real-time.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-sm font-code text-white">
+                        <i data-lucide="check-circle" class="text-axiara-iso-blue w-5 h-5"></i> Instant Policy Mapping
+                    </li>
+                    <li class="flex items-center gap-3 text-sm font-code text-white">
+                        <i data-lucide="check-circle" class="text-axiara-iso-blue w-5 h-5"></i> Control Effectiveness
+                        Scoring
+                    </li>
+                    <li class="flex items-center gap-3 text-sm font-code text-white">
+                        <i data-lucide="check-circle" class="text-axiara-iso-blue w-5 h-5"></i> Audit-Ready Evidence
+                        Locker
+                    </li>
+                </ul>
+            </div>
+            <!-- Interactive Visual Mockup -->
+            <div class="relative bg-axiara-charcoal border border-axiara-white/10 p-6 -none shadow-2xl">
+                <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                    <span class="font-code text-xs text-axiara-silver uppercase">ISO 42001 Readiness</span>
+                    <span class="font-code text-xl font-bold text-green-500">78%</span>
+                </div>
+                <!-- Mock Bars -->
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs font-code text-gray-400 mb-1">
+                            <span>Clause 6: Planning</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="h-2 bg-gray-700 w-full">
+                            <div class="h-full bg-green-500 w-[92%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs font-code text-gray-400 mb-1">
+                            <span>Clause 8: Operation</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="h-2 bg-gray-700 w-full">
+                            <div class="h-full bg-yellow-500 w-[65%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs font-code text-gray-400 mb-1">
+                            <span>Clause 10: Improvement</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="h-2 bg-gray-700 w-full">
+                            <div class="h-full bg-red-500 w-[40%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ROADMAP -->
+    <section class="py-24 bg-axiara-gradient text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-eng font-bold text-axiara-white mb-16">Certification Roadmap</h2>
+
+            <div class="relative flex flex-col md:flex-row justify-between items-center gap-8">
+                <!-- Line -->
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-axiara-white/10 hidden md:block -z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 bg-axiara-obsidian border border-axiara-iso-blue p-6 w-full md:w-64">
+                    <div
+                        class="w-8 h-8 bg-axiara-iso-blue text-white font-bold flex items-center justify-center mx-auto mb-4 border border-axiara-iso-blue">
+                        1</div>
+                    <h3 class="text-white font-bold mb-2">Gap Analysis</h3>
+                    <p class="text-xs text-axiara-silver">Assess current state vs. requirements.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 bg-axiara-obsidian border border-axiara-white/20 p-6 w-full md:w-64">
+                    <div
+                        class="w-8 h-8 bg-axiara-charcoal border border-axiara-white/20 text-white font-bold flex items-center justify-center mx-auto mb-4">
+                        2</div>
+                    <h3 class="text-white font-bold mb-2">Implementation</h3>
+                    <p class="text-xs text-axiara-silver">Deploy AIMS controls and policies.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 bg-axiara-obsidian border border-axiara-white/20 p-6 w-full md:w-64">
+                    <div
+                        class="w-8 h-8 bg-axiara-charcoal border border-axiara-white/20 text-white font-bold flex items-center justify-center mx-auto mb-4">
+                        3</div>
+                    <h3 class="text-white font-bold mb-2">Audit</h3>
+                    <p class="text-xs text-axiara-silver">Running internal & external stage audits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-obsidian text-center border-t border-axiara-iso-blue/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Start your audit today.
+        </h2>
+        <a href="#"
+            class="inline-flex items-center bg-axiara-iso-blue text-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-blue-600 transition-colors shadow-[0_0_20px_rgba(0,91,187,0.4)]">
+            <i data-lucide="file-check-2" class="w-4 h-4 mr-2"></i> Launch Gap Analysis
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

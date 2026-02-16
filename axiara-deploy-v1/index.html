@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiara | The Governance of Intelligence</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D', // Primary Background
+                            crimson: '#C41E3A',  // Accent Lines / Weave
+                            white: '#FFFFFF',    // Primary Text
+                            silver: '#A8A8A8',   // Secondary Text
+                            charcoal: '#1A1A2E', // Glass Fallback
+                            glass: 'rgba(26,26,46,0.4)',      // Frost Base
+                            'glass-hover': 'rgba(26,26,46,0.8)', // Depth State
+                            'crimson-glow': 'rgba(196,30,58,0.05)', // Button Hover
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],        // Structure (Headings/Body)
+                        phil: ['Playfair Display', 'serif'],  // Philosophy (Italic Headlines)
+                        code: ['JetBrains Mono', 'monospace'], // Precision (Labels/Data)
+                    },
+                    borderRadius: {
+                        DEFAULT: '0px',
+                        sm: '0px',
+                        md: '0px',
+                        lg: '0px',
+                        xl: '0px',
+                        '2xl': '0px',
+                        '3xl': '0px',
+                        full: '0px', // Total denial of curvature
+                    },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',  // H1 spacing
+                        'axiara-label': '2px',    // Button/Label spacing
+                        'axiara-pretitle': '3px', // Tiny pre-title spacing
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: repeating-linear-gradient(45deg, rgba(196, 30, 58, 0.03) 0px, rgba(196, 30, 58, 0.03) 1px, transparent 1px, transparent 10px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168, 168, 168, 0.3);
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C41E3A;
+        }
+    </style>
+    <link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video / Image placeholder -->
+        <div class="absolute inset-0 z-0">
+            <!-- Fallback gradient -->
+            <div class="w-full h-full bg-axiara-gradient opacity-90"></div>
+            <!-- Video would go here: <video class="w-full h-full object-cover opacity-40 mix-blend-overlay" autoplay loop muted playsinline src="video.mp4"></video> -->
+        </div>
+
+        <!-- Weave Overlay -->
+        <div class="absolute inset-0 z-10 weave-bg pointer-events-none"></div>
+
+        <!-- Content -->
+        <div class="relative z-20 text-center px-6 max-w-5xl mx-auto">
+            <class="text-hero text-xs font-code text-axiara-crimson uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up" class="text-hero text-xs font-code text-axiara-silver uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up">
+                System Status: Nominal
+            </h1>
+            <h2
+                class="text-5xl md:text-7xl lg:text-8xl font-eng font-black text-axiara-white uppercase tracking-axiara-wide leading-none animate-fade-in-up delay-[200ms]">
+                The Governance of <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-white via-axiara-silver to-white/50">Intelligence</span>
+            </h2>
+            <p
+                class="mt-8 text-lg md:text-xl font-phil italic text-axiara-silver max-w-2xl mx-auto animate-fade-in-up delay-[400ms]">
+                Enterprise AI auditing, compliance, and risk management <br>for the regulatory era.
+            </p>
+            <div class="mt-12 animate-fade-in-up delay-[600ms]">
+                <a href="#mandate"
+                    class="inline-block border border-axiara-white/30 p-4 text-axiara-white hover:border-axiara-crimson hover:text-axiara-crimson transition-all duration-300">
+                    <i data-lucide="arrow-down" class="w-6 h-6 animate-fade-in-up delay-[800ms]"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE MANDATE (Text Block) -->
+    <section id="mandate" class="py-24 md:py-32 bg-axiara-obsidian relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-3xl md:text-5xl font-eng font-bold text-axiara-white leading-tight">
+                AI is no longer a tool; <br>
+                <span class="text-axiara-crimson">it is infrastructure.</span>
+            </h3>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div>
+                    <class="font-code text-xs text-axiara-crimson uppercase tracking-axiara-label mb-4" class="font-code text-xs text-axiara-silver uppercase tracking-axiara-label mb-4">The Challenge
+                    </h4>
+                    <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed">
+                        Unregulated models expose organizations to existential legal, reputational, and operational
+                        risks. The era of "move fast and break things" is over.
+                    </p>
+                </div>
+                <div>
+                    <class="font-code text-xs text-axiara-crimson uppercase tracking-axiara-label mb-4" class="font-code text-xs text-axiara-silver uppercase tracking-axiara-label mb-4">The Solution
+                    </h4>
+                    <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed">
+                        Precision governance. We translate complex regulatory frameworks (EU AI Act, NIST RMF, ISO
+                        42001) into verifiable technical controls.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. THREE PILLARS (Glass Cards) -->
+    <section class="py-24 bg-axiara-charcoal/30 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1: Risk -->
+                <div
+                    class="bg-axiara-glass backdrop-blur-md border-l border-axiara-crimson p-10 hover:bg-axiara-glass-hover hover:border-l-4 transition-all duration-300 group">
+                    <div class="text-axiara-crimson mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="shield-alert" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-eng font-bold text-axiara-white mb-4">Risk Management</h3>
+                    <p class="font-eng font-light text-axiara-silver leading-relaxed mb-6">
+                        Automated vulnerability scanning and adversarial testing for LLMs.
+                    </p>
+                    <href="/services/e2e.html"
+                        class="flex items-center text-xs font-code text-axiara-white uppercase tracking-axiara-label group-hover:text-axiara-crimson transition-colors" href="/services/e2e.html"
+                        class="flex items-center text-xs font-code text-axiara-white uppercase tracking-axiara-label group-hover:text-axiara-crimson transition-colors">
+                        Explore <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Compliance -->
+                <div
+                    class="bg-axiara-glass backdrop-blur-md border-l border-axiara-crimson p-10 hover:bg-axiara-glass-hover hover:border-l-4 transition-all duration-300 group">
+                    <div class="text-axiara-crimson mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="scale" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-eng font-bold text-axiara-white mb-4">Regulatory Compliance</h3>
+                    <p class="font-eng font-light text-axiara-silver leading-relaxed mb-6">
+                        Turnkey alignment with EU AI Act, NIST AI RMF, and ISO 42001.
+                    </p>
+                    <href="/compliance"
+                        class="flex items-center text-xs font-code text-axiara-white uppercase tracking-axiara-label group-hover:text-axiara-crimson transition-colors" href="/compliance"
+                        class="flex items-center text-xs font-code text-axiara-white uppercase tracking-axiara-label group-hover:text-axiara-crimson transition-colors">
+                        Standards <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Strategy -->
+                <div
+                    class="bg-axiara-glass backdrop-blur-md border-l border-axiara-crimson p-10 hover:bg-axiara-glass-hover hover:border-l-4 transition-all duration-300 group">
+                    <div class="text-axiara-crimson mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="compass" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-eng font-bold text-axiara-white mb-4">Boardroom Strategy</h3>
+                    <p class="font-eng font-light text-axiara-silver leading-relaxed mb-6">
+                        Translating technical risk into actionable executive intelligence.
+                    </p>
+                    <href="/insights"
+                        class="flex items-center text-xs font-code text-axiara-white uppercase tracking-axiara-label group-hover:text-axiara-crimson transition-colors" href="/insights"
+                        class="flex items-center text-xs font-code text-axiara-white uppercase tracking-axiara-label group-hover:text-axiara-crimson transition-colors">
+                        Insights <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. E2E AUDIT MODEL (Diagram) -->
+    <section class="py-24 bg-axiara-obsidian border-y border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <class="text-sm font-code text-axiara-crimson uppercase tracking-axiara-pretitle mb-12" class="text-sm font-code text-axiara-silver uppercase tracking-axiara-pretitle mb-12">The Ecosystem
+            </h2>
+            <div class="relative max-w-4xl mx-auto py-12">
+                <!-- Diagram lines (pseudo-elements via CSS or distinct divs) -->
+                <div
+                    class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-axiara-crimson to-transparent opacity-30">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-axiara-obsidian border border-axiara-white/10 p-8">
+                        <span class="block text-4xl font-code text-axiara-white/20 mb-4">01</span>
+                        <h3 class="text-xl font-eng font-bold text-axiara-white mb-2">Audit</h3>
+                        <p class="text-sm font-code text-axiara-silver">Deep inspection of model weights & data lineage.
+                        </p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div
+                        class="bg-axiara-obsidian border border-axiara-crimson p-8 shadow-[0_0_30px_rgba(196,30,58,0.1)]">
+                        <span class="block text-4xl font-code text-axiara-crimson mb-4">02</span>
+                        <h3 class="text-xl font-eng font-bold text-axiara-white mb-2">Monitor</h3>
+                        <p class="text-sm font-code text-axiara-silver">Real-time inference tracking via Episteme.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-axiara-obsidian border border-axiara-white/10 p-8">
+                        <span class="block text-4xl font-code text-axiara-white/20 mb-4">03</span>
+                        <h3 class="text-xl font-eng font-bold text-axiara-white mb-2">Insure</h3>
+                        <p class="text-sm font-code text-axiara-silver">Residual risk transfer & liability coverage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. INDUSTRIES (Grid) -->
+    <section class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-phil italic text-axiara-silver text-center mb-16">Sectors of Focus</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Industry Items -->
+                <a href="/industries/banking.html"
+                    class="group relative aspect-square bg-axiara-charcoal overflow-hidden flex items-end p-6 border border-white/5 hover:border-axiara-crimson transition-colors duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                    </div>
+                    <div class="relative z-10">
+                        <h3
+                            class="text-xl font-eng font-bold text-axiara-white mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Finance</h3>
+                        <p
+                            class="text-xs font-code text-axiara-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Algorithmic Accountability</p>
+                    </div>
+                </a>
+
+                <a href="/industries/energy.html"
+                    class="group relative aspect-square bg-axiara-charcoal overflow-hidden flex items-end p-6 border border-white/5 hover:border-axiara-crimson transition-colors duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                    </div>
+                    <div class="relative z-10">
+                        <h3
+                            class="text-xl font-eng font-bold text-axiara-white mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Energy</h3>
+                        <p
+                            class="text-xs font-code text-axiara-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Critical Infrastructure</p>
+                    </div>
+                </a>
+
+                <a href="/industries/public_sector.html"
+                    class="group relative aspect-square bg-axiara-charcoal overflow-hidden flex items-end p-6 border border-white/5 hover:border-axiara-crimson transition-colors duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                    </div>
+                    <div class="relative z-10">
+                        <h3
+                            class="text-xl font-eng font-bold text-axiara-white mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Public Sector</h3>
+                        <p
+                            class="text-xs font-code text-axiara-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Citizen Data Rights</p>
+                    </div>
+                </a>
+
+                <a href="/industries/healthcare.html"
+                    class="group relative aspect-square bg-axiara-charcoal overflow-hidden flex items-end p-6 border border-white/5 hover:border-axiara-crimson transition-colors duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                    </div>
+                    <div class="relative z-10">
+                        <h3
+                            class="text-xl font-eng font-bold text-axiara-white mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Healthcare</h3>
+                        <p
+                            class="text-xs font-code text-axiara-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Diagnostic Integrity</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CALL TO ACTION (Sprint Link) -->
+    <section class="py-32 bg-axiara-obsidian text-center relative overflow-hidden">
+        <!-- Background Crimson Glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-axiara-crimson opacity-[0.03] blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-eng font-black text-axiara-white uppercase tracking-axiara-wide mb-8">
+                Verification Begins <br>With Velocity.
+            </h2>
+            <p class="text-xl font-phil italic text-axiara-silver mb-12">
+                Deploy the 30-Day Audit Sprint. From obscure risk to technical certainty.
+            </p>
+            <href="/services/sprint.html"
+                class="inline-block bg-transparent border border-axiara-white text-axiara-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:border-axiara-crimson hover:text-axiara-crimson hover:bg-axiara-crimson-glow transition-all duration-300" href="/services/sprint.html"
+                class="inline-block bg-transparent border border-axiara-white text-axiara-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:border-axiara-crimson hover:text-axiara-crimson hover:bg-axiara-crimson-glow transition-all duration-300">
+                Initiate Sprint Sequence
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader Script -->
+    <script>
+        // Use Fetch to load components (only works on local server)
+        // For direct file access, content is assumed to be inlined or loaded differently.
+        // We will try fetch first, with error handling.
+
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+
+                // Inject HTML
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+
+                // Execute scripts in injected HTML (needed for nav toggle)
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+
+                // Re-initialize icons if Lucide is present
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            } catch (e) {
+                console.error(`Failed to load component ${url}:`, e);
+                // Fallback: If fetch fails (CORS), user might be opening file:// directly.
+                // In production, build script would inline this.
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('            'footer-placeholder', '/src/components/footer.html');
+        });
+    </script>
+
+<style>
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+</style>
+
+</body>
+</html>

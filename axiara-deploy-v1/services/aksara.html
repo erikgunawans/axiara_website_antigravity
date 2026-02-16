@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksara Vector Core | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.1' },
+                            '50%': { opacity: '0.3' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Vector Field Visualization (CSS) */
+        .vector-point {
+            position: absolute;
+            background: #C41E3A;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[85vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <!-- Abstract Vector Field Background -->
+        <div class="absolute right-0 top-0 w-1/2 h-full opacity-30 hidden lg:block overflow-hidden">
+            <!-- Generating randomized dots via JS would be ideal, using CSS grid for now -->
+            <div class="grid grid-cols-1 md:grid-cols-12 grid-rows-12 h-full w-full gap-8 p-12 transform rotate-12 scale-110">
+                <!-- Random placement of glowing dots -->
+                <div class="w-1 h-1 bg-axiara-crimson animate-pulse-glow" style="animation-delay: 0.1s">
+                </div>
+                <!-- ... more dots implied / placed sporadically via simple logic or complex CSS if needed. 
+                     For simplicity in this static file, we rely on the weave background and specific accent elements. -->
+                <div class="col-start-4 row-start-2 w-2 h-2 bg-axiara-white animate-pulse"></div>
+                <div class="col-start-8 row-start-5 w-1 h-1 bg-axiara-crimson animate-pulse-glow"
+                    style="animation-delay: 0.5s"></div>
+                <div class="col-start-2 row-start-8 w-1 h-1 bg-axiara-crimson animate-pulse-glow"
+                    style="animation-delay: 1.2s"></div>
+                <div class="col-start-10 row-start-3 w-2 h-2 bg-axiara-white/50 animate-pulse"></div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Text -->
+            <div class="space-y-8">
+                <class="inline-block font-code text-xs text-axiara-crimson uppercase tracking-axiara-pretitle bg-axiara-crimson-glow px-3 py-1 animate-fade-in-up" class="inline-block font-code text-xs text-axiara-silver uppercase tracking-axiara-pretitle bg-axiara-crimson-glow px-3 py-1 animate-fade-in-up">
+                    Service — Vector Database & RAG
+                </span>
+                <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none animate-fade-in-up delay-[200ms]">
+                    Total Recall. <br> Zero Leakage.
+                </h1>
+                <h2 class="text-xl md:text-2xl font-phil italic text-axiara-silver animate-fade-in-up delay-[400ms]">
+                    The memory of the enterprise, <br> secured in obsidian.
+                </h2>
+                <div class="flex gap-4 pt-4 animate-fade-in-up delay-[600ms]">
+                    <a href="#integration"
+                        class="inline-flex justify-center items-center border border-axiara-crimson text-axiara-white font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-crimson hover:text-white transition-colors shadow-[0_0_15px_rgba(196,30,58,0.2)]">
+                        Initialize Core <i data-lucide="database" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Right: Interactive Visual Placeholder -->
+            <div class="hidden lg:flex justify-center items-center animate-fade-in-up delay-[800ms]">
+                <div
+                    class="relative w-[500px] h-[500px] bg-axiara-glass border border-axiara-white/5 -none p-8 flex items-center justify-center">
+                    <div class="absolute inset-4 border border-axiara-crimson/20"></div>
+                    <!-- Code/Data visualization abstraction -->
+                    <class="font-code text-xs text-axiara-crimson/40 leading-relaxed text-center overflow-hidden h-full w-full p-8 select-none" class="font-code text-xs text-axiara-crimson/40 leading-relaxed text-center overflow-hidden h-full w-full p-8 select-none">
+                        0F 2A 4C 91 00 1B<br>
+                        EE 41 12 8A CC 09<br>
+                        <span class="text-axiara-crimson">SOVEREIGN_KEY_DETECTED</span><br>
+                        99 12 41 AA BB 12<br>
+                        00 00 01 11 01 00<br>
+                        ... ENCRYPTED ...
+                    </div>
+                    <div class="absolute bottom-8 right-8 text-axiara-white font-code text-sm animate-pulse">
+                        STATUS: LOCKED
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ARCHITECTURE PIPELINE -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-code text-axiara-silver uppercase tracking-widest">The Sovereign Pipeline</h3>
+            </div>
+
+            <!-- Process Flow -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 relative">
+                <!-- Step 1 -->
+                <div class="text-center group w-full lg:w-auto relative z-10 font-code">
+                    <div
+                        class="w-20 h-20 mx-auto bg-axiara-charcoal border border-axiara-white/10 flex items-center justify-center mb-4 group-hover:border-axiara-crimson transition-colors">
+                        <i data-lucide="file-input" class="text-axiara-white w-8 h-8"></i>
+                    </div>
+                    <class="text-xs text-axiara-crimson uppercase tracking-wider block mb-1" class="text-xs text-axiara-silver uppercase tracking-wider block mb-1">01</span>
+                    <h4 class="text-lg font-bold text-axiara-white uppercase">Ingest</h4>
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden lg:block h-[1px] flex-1 bg-axiara-white/10 relative">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-axiara-crimson"></div>
+                </div>
+                <!-- Mobile Arrow -->
+                <div class="lg:hidden h-8 w-[1px] bg-axiara-white/10"></div>
+
+                <!-- Step 2 -->
+                <div class="text-center group w-full lg:w-auto relative z-10 font-code">
+                    <div
+                        class="w-20 h-20 mx-auto bg-axiara-charcoal border border-axiara-white/10 flex items-center justify-center mb-4 group-hover:border-axiara-crimson transition-colors">
+                        <i data-lucide="scissors" class="text-axiara-white w-8 h-8"></i>
+                    </div>
+                    <class="text-xs text-axiara-crimson uppercase tracking-wider block mb-1" class="text-xs text-axiara-silver uppercase tracking-wider block mb-1">02</span>
+                    <h4 class="text-lg font-bold text-axiara-white uppercase">Chunk</h4>
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden lg:block h-[1px] flex-1 bg-axiara-white/10 relative">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-axiara-crimson"></div>
+                </div>
+                <!-- Mobile Arrow -->
+                <div class="lg:hidden h-8 w-[1px] bg-axiara-white/10"></div>
+
+                <!-- Step 3 -->
+                <div class="text-center group w-full lg:w-auto relative z-10 font-code">
+                    <div
+                        class="w-20 h-20 mx-auto bg-axiara-charcoal border border-axiara-white/10 flex items-center justify-center mb-4 group-hover:border-axiara-crimson transition-colors">
+                        <i data-lucide="binary" class="text-axiara-white w-8 h-8"></i>
+                    </div>
+                    <class="text-xs text-axiara-crimson uppercase tracking-wider block mb-1" class="text-xs text-axiara-silver uppercase tracking-wider block mb-1">03</span>
+                    <h4 class="text-lg font-bold text-axiara-white uppercase">Embed</h4>
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden lg:block h-[1px] flex-1 bg-axiara-white/10 relative">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-axiara-crimson"></div>
+                </div>
+                <!-- Mobile Arrow -->
+                <div class="lg:hidden h-8 w-[1px] bg-axiara-white/10"></div>
+
+                <!-- Step 4 -->
+                <div class="text-center group w-full lg:w-auto relative z-10 font-code">
+                    <div
+                        class="w-20 h-20 mx-auto bg-axiara-crimson border border-axiara-crimson flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(196,30,58,0.3)]">
+                        <i data-lucide="database" class="text-axiara-white w-8 h-8"></i>
+                    </div>
+                    <span class="text-xs text-axiara-white/50 uppercase tracking-wider block mb-1">core</span>
+                    <h4 class="text-lg font-bold text-axiara-white uppercase">Store</h4>
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden lg:block h-[1px] flex-1 bg-axiara-white/10 relative">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-axiara-crimson"></div>
+                </div>
+                <!-- Mobile Arrow -->
+                <div class="lg:hidden h-8 w-[1px] bg-axiara-white/10"></div>
+
+                <!-- Step 5 -->
+                <div class="text-center group w-full lg:w-auto relative z-10 font-code">
+                    <div
+                        class="w-20 h-20 mx-auto bg-axiara-charcoal border border-axiara-white/10 flex items-center justify-center mb-4 group-hover:border-axiara-crimson transition-colors">
+                        <i data-lucide="search-check" class="text-axiara-white w-8 h-8"></i>
+                    </div>
+                    <class="text-xs text-axiara-crimson uppercase tracking-wider block mb-1" class="text-xs text-axiara-silver uppercase tracking-wider block mb-1">04</span>
+                    <h4 class="text-lg font-bold text-axiara-white uppercase">Retrieve</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. FEATURE TRIAD -->
+    <section class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Card 1: Sovereignty -->
+            <div
+                class="bg-axiara-glass border border-axiara-white/5 p-8 hover:bg-axiara-glass-hover transition-colors group">
+                <i data-lucide="lock"
+                    class="text-axiara-crimson w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-xl font-eng font-bold text-axiara-white mb-3">Sovereignty</h3>
+                <p class="font-eng font-light text-axiara-silver leading-relaxed">
+                    Data never leaves your VPC. Full AES-256 encryption at rest and in transit. You hold the keys.
+                </p>
+            </div>
+
+            <!-- Card 2: Granularity -->
+            <div
+                class="bg-axiara-glass border border-axiara-white/5 p-8 hover:bg-axiara-glass-hover transition-colors group">
+                <i data-lucide="layers"
+                    class="text-axiara-crimson w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-xl font-eng font-bold text-axiara-white mb-3">Granularity</h3>
+                <p class="font-eng font-light text-axiara-silver leading-relaxed">
+                    Role-Based Access Control (RBAC) applied at the document chunk level. Strict departmental
+                    segregation.
+                </p>
+            </div>
+
+            <!-- Card 3: Scalability -->
+            <div
+                class="bg-axiara-glass border border-axiara-white/5 p-8 hover:bg-axiara-glass-hover transition-colors group">
+                <i data-lucide="server"
+                    class="text-axiara-crimson w-8 h-8 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-xl font-eng font-bold text-axiara-white mb-3">Scalability</h3>
+                <p class="font-eng font-light text-axiara-silver leading-relaxed">
+                    Horizontal sharding architecture. Proven &lt;50ms P99 latency at 100M+ vector scale.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. INTEGRATION (The Code) -->
+    <section id="integration" class="py-24 bg-axiara-obsidian">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
+
+            <!-- Text -->
+            <div class="lg:w-1/3">
+                <h2 class="text-3xl font-eng font-bold text-axiara-white mb-6">
+                    Native Python SDK
+                </h2>
+                <p class="font-eng font-light text-axiara-silver text-lg mb-8">
+                    Seamless integration with your existing ML pipelines. Initialize the client, ingest documents
+                    securely, and query with granular filters in lines of code.
+                </p>
+                <href="#"
+                    class="text-axiara-crimson font-code text-xs uppercase tracking-widest hover:text-white transition-colors border-b border-axiara-crimson pb-1" href="#"
+                    class="text-axiara-silver font-code text-xs uppercase tracking-widest hover:text-white transition-colors border-b border-axiara-crimson pb-1">
+                    Read the Documentation
+                </a>
+            </div>
+
+            <!-- Terminal -->
+            <div class="lg:w-2/3 w-full">
+                <div
+                    class="bg-[#1e1e2e] shadow-2xl overflow-hidden border border-axiara-white/10 font-code text-sm">
+                    <!-- Terminal Header -->
+                    <div class="bg-[#11111b] px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                        <div class="w-3 h-3 bg-red-500"></div>
+                        <div class="w-3 h-3 bg-yellow-500"></div>
+                        <div class="w-3 h-3 bg-green-500"></div>
+                        <span class="ml-4 text-xs text-gray-500">bash ~ ax-cli status</span>
+                    </div>
+                    <!-- Terminal Body -->
+                    <div class="p-6 text-gray-300 space-y-4">
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">1</span>
+                            <span><span class="text-purple-400">from</span> axiara <span
+                                    class="text-purple-400">import</span> VectorClient</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">2</span>
+                            <span></span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">3</span>
+                            <span>client = VectorClient(api_key=<span class="text-green-400">"AX_Zn89..."</span>,
+                                region=<span class="text-green-400">"us-east-1"</span>)</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">4</span>
+                            <span></span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">5</span>
+                            <span class="text-gray-500"># Sovereign Ingest</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">6</span>
+                            <span>doc_id = client.ingest(</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">7</span>
+                            <span class="pl-8">file=<span class="text-green-400">"q3_financials.pdf"</span>,</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">8</span>
+                            <span class="pl-8">encryption=<span
+                                    class="text-green-400">"customer_managed_key"</span></span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">9</span>
+                            <span>)</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">10</span>
+                            <span></span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">11</span>
+                            <span class="text-gray-500"># Secure Retrieval</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">12</span>
+                            <span>context = client.query(</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">13</span>
+                            <span class="pl-8"><span class="text-green-400">"What is our Q3 risk
+                                    exposure?"</span>,</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">14</span>
+                            <span class="pl-8">filter={<span class="text-green-400">"access_level"</span>: <span
+                                    class="text-green-400">"executive"</span>}</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-axiara-crimson mr-4">15</span>
+                            <span>)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. DEPLOYMENT OPTIONS -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-2xl font-eng font-bold text-axiara-white mb-12">Deployment Models</h2>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-axiara-white/10 border border-axiara-white/10">
+
+                <!-- Option 1 -->
+                <div class="p-8 hover:bg-white/5 transition-colors">
+                    <class="font-code text-sm text-axiara-crimson uppercase tracking-wider mb-2" class="font-code text-sm text-axiara-silver uppercase tracking-wider mb-2">Managed Cloud</h4>
+                    <p class="font-eng text-axiara-silver text-sm">Fully managed cluster in AWS, GCP, or Azure regions.
+                    </p>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="p-8 hover:bg-white/5 transition-colors">
+                    <h4 class="font-code text-sm text-axiara-white uppercase tracking-wider mb-2">VPC Peering</h4>
+                    <p class="font-eng text-axiara-silver text-sm">Data remains in your VPC. Compute is peered securely.
+                    </p>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="p-8 hover:bg-white/5 transition-colors">
+                    <h4 class="font-code text-sm text-axiara-white uppercase tracking-wider mb-2">Air-Gapped</h4>
+                    <p class="font-eng text-axiara-silver text-sm">Full binary deployment on bare metal or private
+                        cloud.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-gradient text-center border-t border-axiara-crimson/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Ownership is the only policy.
+        </h2>
+        <a href="#"
+            class="inline-block bg-axiara-white text-axiara-obsidian font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-axiara-silver transition-colors">
+            Contact Engineering
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('
