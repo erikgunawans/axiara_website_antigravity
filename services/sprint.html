@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Sprint | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: repeating-linear-gradient(45deg, rgba(196, 30, 58, 0.03) 0px, rgba(196, 30, 58, 0.03) 1px, transparent 1px, transparent 10px);
+        }
+
+        /* Asymmetric Timeline Connector Lines */
+        .timeline-spine {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #C41E3A;
+            /* Crimson */
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-spine {
+                left: 20px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content"
+        class="relative min-h-[80vh] flex items-center bg-gradient-to-br from-axiara-obsidian to-[#0a0a12] overflow-hidden">
+        <div class="absolute inset-0 weave-bg opacity-30 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left: Text -->
+            <div class="space-y-8">
+                <class="inline-block font-code text-xs text-axiara-crimson uppercase tracking-axiara-pretitle bg-axiara-crimson-glow px-2 py-1" class="inline-block font-code text-xs text-axiara-silver uppercase tracking-axiara-pretitle bg-axiara-crimson-glow px-2 py-1">
+                    Service — 30 Days
+                </span>
+                <h1 class="text-hero lg: font-eng font-black text-axiara-white uppercase tracking-tight leading-none animate-fade-in-up">
+                    30-Day Risk & <br>Compliance Sprint
+                </h1>
+                <h2 class="text-xl lg:text-2xl font-phil italic text-axiara-silver animate-fade-in-up delay-[200ms]">
+                    From Shadow AI to Glass Box in 30 days.
+                </h2>
+                <p class="font-eng font-light text-axiara-silver/80 text-lg max-w-lg animate-fade-in-up delay-[400ms]">
+                    A low-friction, high-impact diagnostic designed to insulate client leadership from liability and
+                    provide a definitive technical roadmap.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up delay-[600ms]">
+                    <a href="#cta"
+                        class="inline-flex justify-center items-center border border-axiara-white text-axiara-white font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-white hover:text-axiara-obsidian transition-colors">
+                        Book Your Sprint <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                    <href="#timeline"
+                        class="inline-flex justify-center items-center text-axiara-silver font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:text-axiara-crimson transition-colors" href="#timeline"
+                        class="inline-flex justify-center items-center text-axiara-silver font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:text-axiara-crimson transition-colors">
+                        See The Process <i data-lucide="arrow-down" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Abstract Visual (Placeholder) -->
+            <div class="hidden lg:flex justify-center animate-fade-in-up delay-[800ms]">
+                <div
+                    class="relative w-full max-w-md aspect-square bg-axiara-glass border border-axiara-white/5 flex items-center justify-center p-8">
+                    <!-- Conceptual Dashboard Graphic -->
+                    <div class="w-full h-full border border-axiara-crimson/30 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-axiara-crimson opacity-10 blur-3xl"></div>
+                        <div class="p-6 space-y-4">
+                            <div class="h-1 w-1/3 bg-axiara-crimson"></div>
+                            <div class="h-1 w-2/3 bg-axiara-white/20"></div>
+                            <div class="h-1 w-1/2 bg-axiara-white/20"></div>
+                            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="h-24 border border-axiara-white/10 bg-black/40"></div>
+                                <div class="h-24 border border-axiara-white/10 bg-black/40"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 2. SPRINT OVERVIEW -->
+    <section class="py-24 bg-axiara-obsidian">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+            <!-- Left: Editorial -->
+            <div class="space-y-6">
+                <h3 class="text-3xl md:text-4xl font-phil italic text-axiara-white">
+                    The on-ramp to governed excellence.
+                </h3>
+                <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed">
+                    The Sprint covers Phases 1–3 of our End-to-End model (Diagnose, Architect, Illuminate). It is not
+                    just a report; it is an engineering intervention that produces the blueprint for full integration.
+                </p>
+                <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed">
+                    We map unauthorized "Shadow AI", validate data sovereignty for Vector Core migration, and establish
+                    the governance baseline required for Level 4 maturity.
+                </p>
+            </div>
+
+            <!-- Right: Stat Cards -->
+            <div class="flex flex-col gap-4">
+                <!-- Stat 1 -->
+                <div
+                    class="bg-axiara-glass border-l-2 border-axiara-crimson p-6 flex items-center justify-between hover:bg-axiara-glass-hover transition-colors group">
+                    <div>
+                        <span
+                            class="block text-5xl font-eng font-black text-axiara-white group-hover:text-axiara-crimson transition-colors">30</span>
+                        <span class="block font-code text-xs text-axiara-silver mt-1">DAYS TO GLASS BOX</span>
+                    </div>
+                    <i data-lucide="timer" class="text-axiara-silver w-6 h-6"></i>
+                </div>
+                <!-- Stat 2 -->
+                <div
+                    class="bg-axiara-glass border-l-2 border-axiara-crimson p-6 flex items-center justify-between hover:bg-axiara-glass-hover transition-colors group">
+                    <div>
+                        <span
+                            class="block text-5xl font-eng font-black text-axiara-white group-hover:text-axiara-crimson transition-colors">4</span>
+                        <span class="block font-code text-xs text-axiara-silver mt-1">FRAMEWORK ALIGNMENTS</span>
+                    </div>
+                    <i data-lucide="shield-check" class="text-axiara-silver w-6 h-6"></i>
+                </div>
+                <!-- Stat 3 -->
+                <div
+                    class="bg-axiara-glass border-l-2 border-axiara-crimson p-6 flex items-center justify-between hover:bg-axiara-glass-hover transition-colors group">
+                    <div>
+                        <span
+                            class="block text-5xl font-eng font-black text-axiara-white group-hover:text-axiara-crimson transition-colors">L4</span>
+                        <span class="block font-code text-xs text-axiara-silver mt-1">MATURITY DASHBOARD</span>
+                    </div>
+                    <i data-lucide="activity" class="text-axiara-silver w-6 h-6"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. WEEK-BY-WEEK TIMELINE (The Asymmetric Weave) -->
+    <section id="timeline" class="py-32 bg-[#0b0b0e] relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative">
+
+            <!-- Central Spine -->
+            <div class="timeline-spine"></div>
+
+            <!-- WEEK 1: Left -->
+            <div class="relative w-full flex flex-col md:flex-row items-center mb-24 group">
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+                    <div
+                        class="bg-axiara-glass p-8 border border-axiara-white/10 hover:border-axiara-crimson transition-all duration-300 relative">
+                        <!-- Connector Dot -->
+                        <div
+                            class="absolute top-1/2 -right-[54px] w-3 h-3 bg-axiara-crimson hidden md:block group-hover:scale-150 transition-transform">
+                        </div>
+                        <div class="absolute top-8 -left-[29px] w-3 h-3 bg-axiara-crimson md:hidden"></div>
+
+                        <div class="flex justify-between items-start mb-4 md:flex-row-reverse flex-row">
+                            <class="font-code text-xs text-axiara-crimson uppercase" class="font-code text-xs text-axiara-silver uppercase">Week 01</span>
+                            <span class="font-eng font-bold text-axiara-white uppercase">Map</span>
+                        </div>
+                        <h3 class="text-2xl font-eng font-bold text-axiara-white mb-2">Shadow AI Audit</h3>
+                        <p class="font-eng font-light text-axiara-silver text-sm mb-6">
+                            Deploy Shadow AI Audit Template. Identify unauthorized tools & PII exposure.
+                        </p>
+                        <ul class="space-y-2 text-xs font-code text-axiara-silver md:text-right text-left">
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Shadow AI Landscape Report</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Regulatory Exposure Assessment</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Maturity Score Baseline (L1)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2"></div> <!-- Spacer -->
+            </div>
+
+            <!-- WEEK 2: Right -->
+            <div class="relative w-full flex flex-col md:flex-row items-center mb-24 group">
+                <div class="md:w-1/2 order-1"></div> <!-- Spacer -->
+                <div class="md:w-1/2 md:pl-12 order-2 pl-12">
+                    <div
+                        class="bg-axiara-glass p-8 border border-axiara-white/10 hover:border-axiara-crimson transition-all duration-300 relative">
+                        <!-- Connector Dot -->
+                        <div
+                            class="absolute top-1/2 -left-[54px] w-3 h-3 bg-axiara-crimson hidden md:block group-hover:scale-150 transition-transform">
+                        </div>
+                        <div class="absolute top-8 -left-[29px] w-3 h-3 bg-axiara-crimson md:hidden"></div>
+
+                        <div class="flex justify-between items-start mb-4">
+                            <class="font-code text-xs text-axiara-crimson uppercase" class="font-code text-xs text-axiara-silver uppercase">Week 02</span>
+                            <span class="font-eng font-bold text-axiara-white uppercase">Govern</span>
+                        </div>
+                        <h3 class="text-2xl font-eng font-bold text-axiara-white mb-2">Vector Core Ready</h3>
+                        <p class="font-eng font-light text-axiara-silver text-sm mb-6">
+                            Legacy database mapping and RAG pipeline architecture validation.
+                        </p>
+                        <ul class="space-y-2 text-xs font-code text-axiara-silver text-left">
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Vector Core Migration Plan</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Security & Sovereignty Audit</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Draft Episteme Logic Map</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 3: Left -->
+            <div class="relative w-full flex flex-col md:flex-row items-center mb-24 group">
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+                    <div
+                        class="bg-axiara-glass p-8 border border-axiara-white/10 hover:border-axiara-crimson transition-all duration-300 relative">
+                        <!-- Connector Dot -->
+                        <div
+                            class="absolute top-1/2 -right-[54px] w-3 h-3 bg-axiara-crimson hidden md:block group-hover:scale-150 transition-transform">
+                        </div>
+                        <div class="absolute top-8 -left-[29px] w-3 h-3 bg-axiara-crimson md:hidden"></div>
+
+                        <div class="flex justify-between items-start mb-4 md:flex-row-reverse flex-row">
+                            <class="font-code text-xs text-axiara-crimson uppercase" class="font-code text-xs text-axiara-silver uppercase">Week 03</span>
+                            <span class="font-eng font-bold text-axiara-white uppercase">Measure</span>
+                        </div>
+                        <h3 class="text-2xl font-eng font-bold text-axiara-white mb-2">Logic Mapping</h3>
+                        <p class="font-eng font-light text-axiara-silver text-sm mb-6">
+                            The moment AI transforms from Black Box to Glass Box. DPO Red-Team Challenge.
+                        </p>
+                        <ul class="space-y-2 text-xs font-code text-axiara-silver md:text-right text-left">
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Episteme Logic Maps</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Prompt Integrity Report</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Accountability Map</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2"></div> <!-- Spacer -->
+            </div>
+
+            <!-- WEEK 4: Right -->
+            <div class="relative w-full flex flex-col md:flex-row items-center group">
+                <div class="md:w-1/2 order-1"></div> <!-- Spacer -->
+                <div class="md:w-1/2 md:pl-12 order-2 pl-12">
+                    <div
+                        class="bg-axiara-glass p-8 border border-axiara-white/10 hover:border-axiara-crimson transition-all duration-300 relative">
+                        <!-- Connector Dot -->
+                        <div
+                            class="absolute top-1/2 -left-[54px] w-3 h-3 bg-axiara-crimson hidden md:block group-hover:scale-150 transition-transform">
+                        </div>
+                        <div class="absolute top-8 -left-[29px] w-3 h-3 bg-axiara-crimson md:hidden"></div>
+
+                        <div class="flex justify-between items-start mb-4">
+                            <class="font-code text-xs text-axiara-crimson uppercase" class="font-code text-xs text-axiara-silver uppercase">Week 04</span>
+                            <span class="font-eng font-bold text-axiara-white uppercase">Manage</span>
+                        </div>
+                        <h3 class="text-2xl font-eng font-bold text-axiara-white mb-2">The Blueprint</h3>
+                        <p class="font-eng font-light text-axiara-silver text-sm mb-6">
+                            Final Executive Blueprint. 24-month Nexus Implementation Roadmap. Board authorization.
+                        </p>
+                        <ul class="space-y-2 text-xs font-code text-axiara-silver text-left">
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Executive Transformation Blueprint</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Nexus 2026 Roadmap</li>
+                            <li><span class="text-axiara-crimson mr-2">◆</span>Live Episteme Dashboard (L4)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. FRAMEWORK ALIGNMENT TABLE -->
+    <section class="py-24 bg-axiara-obsidian">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-eng font-bold text-axiara-white mb-12 border-l-4 border-axiara-crimson pl-4">
+                Regulatory Alignment Matrix
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left font-code text-sm">
+                    <thead>
+                        <class="bg-axiara-charcoal text-axiara-crimson uppercase text-xs tracking-wider" class="bg-axiara-charcoal text-axiara-silver uppercase text-xs tracking-wider">
+                            <th class="p-4 font-normal">Week</th>
+                            <th class="p-4 font-normal">Phase</th>
+                            <th class="p-4 font-normal">NIST Function</th>
+                            <th class="p-4 font-normal">AIMA Domain</th>
+                            <th class="p-4 font-normal">Axiara Maturity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-axiara-silver divide-y divide-axiara-white/5">
+                        <tr class="hover:bg-axiara-white/5 transition-colors">
+                            <td class="p-4">1</td>
+                            <td class="p-4 font-eng font-semibold text-axiara-white">Shield</td>
+                            <td class="p-4">MAP</td>
+                            <td class="p-4">Governance, Risk</td>
+                            <td class="p-4 text-axiara-white">Level 1 → 2</td>
+                        </tr>
+                        <tr class="hover:bg-axiara-white/5 transition-colors">
+                            <td class="p-4">2</td>
+                            <td class="p-4 font-eng font-semibold text-axiara-white">Aksara</td>
+                            <td class="p-4">GOVERN</td>
+                            <td class="p-4">Data Management</td>
+                            <td class="p-4 text-axiara-white">Level 2+</td>
+                        </tr>
+                        <tr class="hover:bg-axiara-white/5 transition-colors">
+                            <td class="p-4">3</td>
+                            <td class="p-4 font-eng font-semibold text-axiara-white">Axiom</td>
+                            <td class="p-4">MEASURE</td>
+                            <td class="p-4">Verification</td>
+                            <td class="p-4 text-axiara-white">Level 3+</td>
+                        </tr>
+                        <tr class="hover:bg-axiara-white/5 transition-colors">
+                            <td class="p-4">4</td>
+                            <td class="p-4 font-eng font-semibold text-axiara-white">Terpadu</td>
+                            <td class="p-4">MANAGE</td>
+                            <td class="p-4">Operations</td>
+                            <td class="p-4 text-axiara-white">Level 4 (Exit)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DELIVERABLES GRID -->
+    <section class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-eng font-bold text-axiara-white mb-12 border-l-4 border-axiara-crimson pl-4">
+                Concrete Deliverables
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-axiara-glass p-6 border border-white/5 hover:border-axiara-crimson transition-all group">
+                    <i data-lucide="file-search" class="text-axiara-crimson w-8 h-8 mb-4"></i>
+                    <h4 class="font-eng font-bold text-axiara-white mb-2">Shadow AI Report</h4>
+                    <p class="font-code text-xs text-axiara-silver">Complete landscape of unauthorized AI tools &
+                        exposed flows.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-axiara-glass p-6 border border-white/5 hover:border-axiara-crimson transition-all group">
+                    <i data-lucide="shield-check" class="text-axiara-crimson w-8 h-8 mb-4"></i>
+                    <h4 class="font-eng font-bold text-axiara-white mb-2">Governance Score</h4>
+                    <p class="font-code text-xs text-axiara-silver">Quantitative maturity baseline (L1-L5) vs NIST RMF.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-axiara-glass p-6 border border-white/5 hover:border-axiara-crimson transition-all group">
+                    <i data-lucide="database" class="text-axiara-crimson w-8 h-8 mb-4"></i>
+                    <h4 class="font-eng font-bold text-axiara-white mb-2">Vector Core Plan</h4>
+                    <p class="font-code text-xs text-axiara-silver">Architecture for sovereign RAG and PII-sanitized
+                        pipelines.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-axiara-glass p-6 border border-white/5 hover:border-axiara-crimson transition-all group">
+                    <i data-lucide="eye" class="text-axiara-crimson w-8 h-8 mb-4"></i>
+                    <h4 class="font-eng font-bold text-axiara-white mb-2">Logic Maps</h4>
+                    <p class="font-code text-xs text-axiara-silver">Visual audit trails mapping decision logic to human
+                        owners.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-axiara-glass p-6 border border-white/5 hover:border-axiara-crimson transition-all group">
+                    <i data-lucide="users" class="text-axiara-crimson w-8 h-8 mb-4"></i>
+                    <h4 class="font-eng font-bold text-axiara-white mb-2">Accountability Map</h4>
+                    <p class="font-code text-xs text-axiara-silver">Role-based access controls and liability assignment
+                        matrix.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-axiara-glass p-6 border border-white/5 hover:border-axiara-crimson transition-all group">
+                    <i data-lucide="map" class="text-axiara-crimson w-8 h-8 mb-4"></i>
+                    <h4 class="font-eng font-bold text-axiara-white mb-2">Nexus Roadmap</h4>
+                    <p class="font-code text-xs text-axiara-silver">24-month strategic implementation plan for total
+                        compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONVERSION CTA -->
+    <section id="cta"
+        class="py-32 bg-axiara-obsidian border-t border-axiara-crimson/20 relative overflow-hidden text-center">
+        <div class="absolute inset-0 weave-bg opacity-10 pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto px-6 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-phil italic text-axiara-white mb-6">
+                "Every engagement begins with the Sprint."
+            </h2>
+            <p class="font-eng font-light text-axiara-silver mb-10 text-lg">
+                50% upon commencement. 50% upon delivery of the Final Executive Blueprint. <br>
+                No hidden fees. No scope creep.
+            </p>
+            <button
+                class="inline-block bg-transparent border-2 border-axiara-crimson text-axiara-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-axiara-crimson hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(196,30,58,0.2)] animate-pulse-slow">
+                Book Your Sprint
+            </button>
+            <p class="mt-8 font-code text-[10px] text-axiara-silver/50 tracking-widest uppercase">
+                Step 1: Application Review
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                // Adjust path for subdirectory (we are in /services/)
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) {
+                console.error(`Failed to load component ${url}:`, e);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Path adjusted for services/ subdirectory (need to go up one level for components if not using absolute paths)
+            // Using root-relative paths for simplicity as we are on a web server.
+            loadComponent('

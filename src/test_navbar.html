@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiara Navbar Test</title>
+    <link rel="stylesheet" href="src/css/axiara.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '0px',
+                        sm: '0px',
+                        md: '0px',
+                        lg: '0px',
+                        xl: '0px',
+                        '2xl': '0px',
+                        '3xl': '0px',
+                        full: '0px',
+                    },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+            min-height: 200vh;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- Navbar Component Injection -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('src/components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // Re-execute scripts in injected HTML
+                const scripts = document.getElementById('navbar-container').getElementsByTagName('script');
+                for (let i = 0; i < scripts.length; i++) {
+                    eval(scripts[i].innerText);
+                }
+            });
+    </script>
+
+    <!-- Content to enable scrolling -->
+    <div class="h-screen flex items-center justify-center">
+        <h1 class="text-hero font-eng font-black uppercase tracking-axiara-wide text-center">
+            Scroll Down<br>
+            <span class="text-axiara-crimson text-xl font-code tracking-axiara-label mt-4 block">To Test Glass
+                Effect</span>
+        </h1>
+    </div>
+
+    <div class="h-screen bg-axiara-charcoal/50 flex items-center justify-center">
+        <div class="glass-card max-w-2xl">
+            <h2 class="font-phil italic text-4xl text-axiara-silver mb-6">The Darkroom Aesthetic</h2>
+            <p class="font-eng font-light text-axiara-silver text-lg">
+                Verify that the navbar transitions to frosted glass when this section engages.
+                Check mobile menu overlay behavior.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+        <style>
+            @media (prefers-reduced-motion: reduce) {
+                *, ::before, ::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+        </style>
+        
+</body>
+
+</html>

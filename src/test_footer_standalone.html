@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiara Footer Test (Standalone)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '0px',
+                        sm: '0px',
+                        md: '0px',
+                        lg: '0px',
+                        xl: '0px',
+                        '2xl': '0px',
+                        '3xl': '0px',
+                        full: '0px',
+                    },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+            min-height: 100vh;
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="text-white flex flex-col justify-end">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <div class="flex-grow flex items-center justify-center">
+        <h1 class="text-hero font-eng font-black uppercase tracking-axiara-wide text-center">
+            Footer Test<br>
+            <span class="text-axiara-crimson text-lg font-code tracking-axiara-label mt-4 block">Verify Layout & Hover
+                States</span>
+        </h1>
+    </div>
+
+    <!-- INLINED FOOTER COMPONENT START -->
+    <footer id="axiara-footer" class="bg-axiara-obsidian border-t border-axiara-crimson/20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+
+            <!-- GRID LAYOUT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <!-- COLUMN 1: Identity -->
+                <div class="space-y-6">
+                    <a href="/" class="block">
+                        <!-- Inline Placeholder for Logo during test -->
+                        <div class="h-8 w-32 bg-white flex items-center justify-center text-black font-eng font-bold">
+                            LOGO</div>
+                    </a>
+                    <p class="font-eng font-light text-axiara-silver leading-relaxed text-sm">
+                        The Governance of Intelligence.<br>
+                        Enterprise AI auditing, compliance, and risk management for the regulatory era.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social Icons (Lucide) -->
+                        <a href="#" class="text-axiara-silver hover:text-axiara-crimson transition-colors duration-300">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-axiara-silver hover:text-axiara-crimson transition-colors duration-300">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-axiara-silver hover:text-axiara-crimson transition-colors duration-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: Solutions -->
+                <div class="space-y-6">
+                    <h4 class="font-eng font-bold text-axiara-white uppercase tracking-axiara-label text-sm">Solutions
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                30-Day Sprint
+                            </a>
+                        </li>
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                End-to-End Audit
+                            </a>
+                        </li>
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                Aksara Vector Core
+                            </a>
+                        </li>
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                NTRJ Episteme
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3: Company -->
+                <div class="space-y-6">
+                    <h4 class="font-eng font-bold text-axiara-white uppercase tracking-axiara-label text-sm">Company
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                About Axiara
+                            </a>
+                        </li>
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                Insights & Research
+                            </a>
+                        </li>
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                Careers
+                            </a>
+                        </li>
+                        <li>
+                            <href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300" href="#"
+                                class="font-code text-xs text-axiara-silver uppercase tracking-wide hover:text-axiara-crimson transition-colors duration-300">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 4: Compliance & Connect -->
+                <div class="space-y-6">
+                    <h4 class="font-eng font-bold text-axiara-white uppercase tracking-axiara-label text-sm">Compliance
+                    </h4>
+
+                    <!-- Badges Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                        <div
+                            class="border border-axiara-white/20 p-2 text-center hover:border-axiara-crimson transition-colors">
+                            <span class="block font-code text-[10px] text-axiara-silver uppercase">ISO 42001</span>
+                        </div>
+                        <div
+                            class="border border-axiara-white/20 p-2 text-center hover:border-axiara-crimson transition-colors">
+                            <span class="block font-code text-[10px] text-axiara-silver uppercase">NIST RMF</span>
+                        </div>
+                        <div
+                            class="border border-axiara-white/20 p-2 text-center hover:border-axiara-crimson transition-colors">
+                            <span class="block font-code text-[10px] text-axiara-silver uppercase">EU AI Act</span>
+                        </div>
+                        <div
+                            class="border border-axiara-white/20 p-2 text-center hover:border-axiara-crimson transition-colors">
+                            <span class="block font-code text-[10px] text-axiara-silver uppercase">SOC 2 Type II</span>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <form class="relative">
+                        <input type="email" placeholder="ENTER EMAIL"
+                            class="w-full bg-transparent border border-axiara-white/30 text-axiara-white font-code text-xs p-3 focus:outline-none focus:border-axiara-crimson transition-colors placeholder:text-axiara-silver/50"
+                            required>
+                        <button type="submit"
+                            class="absolute right-2 top-1/2 transform -translate-y-1/2 text-axiara-silver hover:text-axiara-crimson transition-colors">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM BAR -->
+            <div
+                class="border-t border-axiara-white/10 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+
+                <!-- Copyright -->
+                <div class="text-axiara-silver/60 font-code text-[10px] uppercase tracking-wide">
+                    &copy; 2026 Axiara. All Rights Reserved.
+                </div>
+
+                <!-- Legal Links -->
+                <div class="flex space-x-6 text-axiara-silver/60 font-code text-[10px] uppercase tracking-wide">
+                    <a href="#" class="hover:text-axiara-crimson transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-axiara-crimson transition-colors">Terms of Service</a>
+                </div>
+
+                <!-- Status Indicator -->
+                <div class="flex items-center space-x-2">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-axiara-silver/60 font-code text-[10px] uppercase tracking-wide">System:
+                        Nominal</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+    </script>
+    <!-- INLINED FOOTER COMPONENT END -->
+
+
+        <style>
+            @media (prefers-reduced-motion: reduce) {
+                *, ::before, ::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+        </style>
+        
+</body>
+
+</html>

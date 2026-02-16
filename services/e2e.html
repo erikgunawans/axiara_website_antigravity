@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End-to-End Audit | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-line': 'pulseLine 3s infinite linear',
+                        'dash': 'dash 3s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseLine: {
+                            '0%': { opacity: '0.1' },
+                            '50%': { opacity: '1' },
+                            '100%': { opacity: '0.1' },
+                        },
+                        dash: {
+                            'to': { 'stroke-dashoffset': '-20' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Matrix/Code Rain Effect Placeholder */
+        .matrix-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 1)),
+                url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="20" fill="%231A1A2E" font-family="monospace" font-size="10">10110</text><text x="50" y="60" fill="%231A1A2E" font-family="monospace" font-size="10">01001</text></svg>');
+        }
+
+        /* Connector Pipe Animation */
+        .pipe-flow {
+            stroke-dasharray: 10;
+            animation: dash 1s linear infinite;
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <div class="matrix-bg z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <class="inline-block font-code text-xs text-axiara-crimson uppercase tracking-axiara-pretitle bg-axiara-crimson-glow px-3 py-1 mb-8 animate-fade-in-up" class="inline-block font-code text-xs text-axiara-silver uppercase tracking-axiara-pretitle bg-axiara-crimson-glow px-3 py-1 mb-8 animate-fade-in-up">
+                Service — End-to-End Risk Management
+            </span>
+            <h1 class="text-hero md: lg: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-6 animate-fade-in-up delay-[200ms]">
+                The Glass Box <br> Protocol
+            </h1>
+            <h2 class="text-xl md:text-2xl font-phil italic text-axiara-silver mb-12 animate-fade-in-up delay-[400ms]">
+                Total algorithmic transparency. From weights to warranty.
+            </h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-[600ms]">
+                <a href="#audit"
+                    class="inline-flex justify-center items-center border border-axiara-crimson text-axiara-white font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-crimson hover:text-white transition-all shadow-[0_0_15px_rgba(196,30,58,0.2)]">
+                    Initiate Audit <i data-lucide="file-search" class="ml-2 w-4 h-4"></i>
+                </a>
+                <a href="#diagram"
+                    class="inline-flex justify-center items-center text-axiara-silver font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:text-axiara-white transition-colors">
+                    View Architecture <i data-lucide="arrow-down" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE E2E MODEL (Diagram) -->
+    <section id="diagram" class="py-32 bg-axiara-obsidian border-b border-axiara-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-code text-axiara-silver uppercase tracking-widest">System Architecture</h3>
+            </div>
+
+            <!-- Responsive Diagram Container -->
+            <div class="relative flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-0">
+
+                <!-- Step 1: AUDIT -->
+                <div
+                    class="flex-1 bg-axiara-glass border border-axiara-white/10 p-8 relative group hover:border-axiara-crimson transition-colors z-10">
+                    <class="absolute -top-3 left-1/2 -translate-x-1/2 bg-axiara-obsidian px-2 text-axiara-crimson font-code text-xs" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-axiara-obsidian px-2 text-axiara-silver font-code text-xs">
+                        PHASE 01</div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 mx-auto bg-axiara-charcoal -none flex items-center justify-center mb-6 group-hover:text-axiara-crimson transition-colors text-white">
+                            <i data-lucide="file-search" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-eng font-bold text-axiara-white uppercase mb-2">Audit</h4>
+                        <p class="font-code text-xs text-axiara-silver">Static Inspection</p>
+                    </div>
+                </div>
+
+                <!-- Connector 1-2 -->
+                <div class="hidden lg:flex items-center justify-center w-24 relative overflow-hidden">
+                    <svg class="w-full h-2" viewBox="0 0 100 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="1" x2="100" y2="1" stroke="#333" stroke-width="2" />
+                        <line x1="0" y1="1" x2="100" y2="1" stroke="#C41E3A" stroke-width="2" class="pipe-flow" />
+                    </svg>
+                </div>
+                <!-- Mobile Connector (Vertical) -->
+                <div class="lg:hidden h-12 w-[2px] bg-axiara-white/10 mx-auto relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full bg-axiara-crimson animate-pulse-line"></div>
+                </div>
+
+                <!-- Step 2: MONITOR -->
+                <div
+                    class="flex-1 bg-axiara-glass border border-axiara-crimson shadow-[0_0_30px_rgba(196,30,58,0.15)] p-8 relative z-10">
+                    <class="absolute -top-3 left-1/2 -translate-x-1/2 bg-axiara-obsidian px-2 text-axiara-crimson font-code text-xs" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-axiara-obsidian px-2 text-axiara-silver font-code text-xs">
+                        PHASE 02</div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 mx-auto bg-axiara-crimson -none flex items-center justify-center mb-6 text-white animate-pulse">
+                            <i data-lucide="activity" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-eng font-bold text-axiara-white uppercase mb-2">Monitor</h4>
+                        <p class="font-code text-xs text-axiara-silver">Real-time Telemetry</p>
+                    </div>
+                </div>
+
+                <!-- Connector 2-3 -->
+                <div class="hidden lg:flex items-center justify-center w-24 relative overflow-hidden">
+                    <svg class="w-full h-2" viewBox="0 0 100 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="1" x2="100" y2="1" stroke="#333" stroke-width="2" />
+                        <line x1="0" y1="1" x2="100" y2="1" stroke="#C41E3A" stroke-width="2" class="pipe-flow" />
+                    </svg>
+                </div>
+                <!-- Mobile Connector (Vertical) -->
+                <div class="lg:hidden h-12 w-[2px] bg-axiara-white/10 mx-auto relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full bg-axiara-crimson animate-pulse-line"></div>
+                </div>
+
+                <!-- Step 3: INSURE -->
+                <div
+                    class="flex-1 bg-axiara-glass border border-axiara-white/10 p-8 relative group hover:border-axiara-crimson transition-colors z-10">
+                    <class="absolute -top-3 left-1/2 -translate-x-1/2 bg-axiara-obsidian px-2 text-axiara-crimson font-code text-xs" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-axiara-obsidian px-2 text-axiara-silver font-code text-xs">
+                        PHASE 03</div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 mx-auto bg-axiara-charcoal -none flex items-center justify-center mb-6 group-hover:text-axiara-crimson transition-colors text-white">
+                            <i data-lucide="shield" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-eng font-bold text-axiara-white uppercase mb-2">Insure</h4>
+                        <p class="font-code text-xs text-axiara-silver">Risk Transfer</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DEEP DIVE: PHASE 1 (AUDIT) -->
+    <section id="audit" class="py-24 bg-axiara-gradient border-b border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Content -->
+            <div class="order-2 lg:order-1">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="text-4xl font-code text-axiara-white/20">01</span>
+                    <h3 class="text-3xl font-eng font-bold text-axiara-white">The Static Snapshot</h3>
+                </div>
+                <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed mb-8">
+                    Before deployment, we execute a forensic analysis of model weights and training data lineage. We
+                    identify latent biases, PII retention, and unauthorized capabilities.
+                </p>
+                <ul class="space-y-4 font-code text-sm text-axiara-silver">
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Model Weights Analysis (Parameter inspection)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Training Data Lineage (Copyright verification)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Adversarial Stress Testing (Red-teaming)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Graphic -->
+            <div
+                class="order-1 lg:order-2 bg-axiara-glass border border-axiara-white/10 p-2 h-64 lg:h-80 flex items-center justify-center relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10">
+                </div>
+                <!-- Abstract Wireframe -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4 w-3/4 opacity-60">
+                    <div class="h-12 bg-axiara-crimson/20 border border-axiara-crimson/50"></div>
+                    <div class="h-12 bg-white/5 border border-white/20"></div>
+                    <div class="h-12 bg-white/5 border border-white/20"></div>
+                    <div class="h-12 bg-white/5 border border-white/20"></div>
+                    <div class="h-12 bg-axiara-crimson/20 border border-axiara-crimson/50"></div>
+                    <div class="h-12 bg-white/5 border border-white/20"></div>
+                    <div class="h-12 bg-white/5 border border-white/20"></div>
+                    <div class="h-12 bg-white/5 border border-white/20"></div>
+                    <div class="h-12 bg-axiara-crimson/20 border border-axiara-crimson/50"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. DEEP DIVE: PHASE 2 (MONITOR) -->
+    <section id="monitor" class="py-24 bg-axiara-obsidian border-b border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Graphic -->
+            <div
+                class="bg-axiara-glass border-l-4 border-axiara-crimson p-8 h-64 lg:h-80 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(196,30,58,0.1)]">
+                <div class="flex justify-between items-end border-b border-axiara-white/10 pb-4">
+                    <span class="font-code text-xs text-axiara-silver">DRIFT_METRIC</span>
+                    <span class="font-code text-xl text-axiara-crimson font-bold">0.02%</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-axiara-white/10 pb-4">
+                    <span class="font-code text-xs text-axiara-silver">LATENCY_MS</span>
+                    <span class="font-code text-xl text-axiara-white font-bold">24ms</span>
+                </div>
+                <div class="flex justify-between items-end">
+                    <span class="font-code text-xs text-axiara-silver">THREAT_INTEL</span>
+                    <span class="font-code text-xl text-emerald-500 font-bold">SECURE</span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div>
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="text-4xl font-code text-axiara-white/20">02</span>
+                    <h3 class="text-3xl font-eng font-bold text-axiara-white">The Dynamic Pulse</h3>
+                </div>
+                <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed mb-8">
+                    Integration with the **Episteme Platform** ensures continuous monitoring. We detect drift,
+                    hallucination, and injection attacks in real-time, enforcing policy as code.
+                </p>
+                <ul class="space-y-4 font-code text-sm text-axiara-silver">
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Drift Detection (< 0.05% threshold)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Prompt Injection Firewalls (OWASP Top 10)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Low Latency Overhead (24ms avg)</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. DEEP DIVE: PHASE 3 (INSURE) -->
+    <section id="insure" class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Content -->
+            <div class="order-2 lg:order-1">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="text-4xl font-code text-axiara-white/20">03</span>
+                    <h3 class="text-3xl font-eng font-bold text-axiara-white">The Liability Shield</h3>
+                </div>
+                <p class="font-eng font-light text-axiara-silver text-lg leading-relaxed mb-8">
+                    Residual risk is transferred to our underwriting partners. By achieving Level 4 maturity, your AI
+                    deployments become insurable assets rather than liabilities.
+                </p>
+                <ul class="space-y-4 font-code text-sm text-axiara-silver">
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Underwritten by Global Tier-1 Carriers</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>Hallucination Damages Coverage</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-axiara-crimson mr-3">>>></span>
+                        <span>IP Infringement Defense</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Graphic -->
+            <div
+                class="order-1 lg:order-2 bg-axiara-glass border border-axiara-white/10 p-8 h-64 lg:h-80 flex items-center justify-center relative">
+                <div class="text-center space-y-4">
+                    <i data-lucide="shield-check" class="w-16 h-16 text-axiara-white mx-auto"></i>
+                    <h4 class="font-phil italic text-2xl text-axiara-silver">Insurable Grade</h4>
+                    <div class="w-24 h-1 bg-axiara-crimson mx-auto"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. TECHNICAL SPECIFICATIONS -->
+    <section class="py-24 bg-[#0b0b0e] border-t border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-eng font-bold text-axiara-white mb-12 border-l-4 border-axiara-crimson pl-4">
+                Technical Compatibility
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <class="font-code text-sm text-axiara-crimson uppercase tracking-wider" class="font-code text-sm text-axiara-silver uppercase tracking-wider">Models</h5>
+                    <ul class="text-xs font-code text-axiara-silver space-y-2">
+                        <li>Llama 3 (8B, 70B)</li>
+                        <li>GPT-4o / 4-Turbo</li>
+                        <li>Claude 3.5 Sonnet</li>
+                        <li>Mistral Large</li>
+                    </ul>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-4">
+                    <class="font-code text-sm text-axiara-crimson uppercase tracking-wider" class="font-code text-sm text-axiara-silver uppercase tracking-wider">Vectors</h5>
+                    <ul class="text-xs font-code text-axiara-silver space-y-2">
+                        <li>Pinecone</li>
+                        <li>Milvus</li>
+                        <li>Weaviate</li>
+                        <li>Qdrant</li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-4">
+                    <class="font-code text-sm text-axiara-crimson uppercase tracking-wider" class="font-code text-sm text-axiara-silver uppercase tracking-wider">Frameworks</h5>
+                    <ul class="text-xs font-code text-axiara-silver space-y-2">
+                        <li>EU AI Act (Category 1)</li>
+                        <li>NIST AI RMF 1.0</li>
+                        <li>ISO 42001</li>
+                        <li>NYC Local Law 144</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="space-y-4">
+                    <class="font-code text-sm text-axiara-crimson uppercase tracking-wider" class="font-code text-sm text-axiara-silver uppercase tracking-wider">Deployment</h5>
+                    <ul class="text-xs font-code text-axiara-silver space-y-2">
+                        <li>On-Premise (Airgapped)</li>
+                        <li>Virtual Private Cloud</li>
+                        <li>Hybrid Edge</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA BAND -->
+    <section class="py-32 bg-axiara-obsidian border-t border-axiara-crimson/20 text-center relative overflow-hidden">
+        <div class="absolute inset-0 weave-bg opacity-10 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-eng font-black text-axiara-white uppercase mb-8">
+                Deploy The Protocol
+            </h2>
+            <a href="/services/sprint.html"
+                class="inline-block bg-axiara-crimson text-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-red-700 transition-colors shadow-lg">
+                Start With A Diagnostic Audit
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

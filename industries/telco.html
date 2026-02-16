@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry: Telecommunications | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            'signal-blue': '#4CC9F0', // Telco specific accent
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulseSlow 4s infinite ease-in-out',
+                        'signal-wave': 'signalWave 3s infinite linear',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        },
+                        signalWave: {
+                            '0%': { transform: 'scale(1)', opacity: '0.8' },
+                            '100%': { transform: 'scale(2)', opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* 5G Signal Animation */
+        .signal-ring {
+            position: absolute;
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            border-radius: 0px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <!-- Abstract 5G Signal Visual -->
+        <div
+            class="absolute right-[-10%] top-1/2 transform -translate-y-1/2 w-[800px] h-[800px] opacity-30 pointer-events-none hidden md:block">
+            <div class="signal-ring w-full h-full animate-signal-wave"></div>
+            <div class="signal-ring w-[600px] h-[600px] animate-signal-wave" style="animation-delay: 1s"></div>
+            <div class="signal-ring w-[400px] h-[400px] animate-signal-wave" style="animation-delay: 2s"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <i data-lucide="radio-tower" class="w-32 h-32 text-axiara-signal-blue opacity-50"></i>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <class="inline-block font-code text-xs text-axiara-crimson uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-charcoal border border-axiara-crimson/20 px-3 py-1" class="inline-block font-code text-xs text-axiara-silver uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-charcoal border border-axiara-crimson/20 px-3 py-1">
+                    Industry — Telecommunications
+                </span>
+                <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-6 animate-fade-in-up delay-[200ms]">
+                    Intelligence<br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-axiara-white to-axiara-signal-blue">At
+                        The Edge.</span>
+                </h1>
+                <h2
+                    class="text-2xl md:text-4xl font-phil italic text-axiara-silver mb-10 animate-fade-in-up delay-[400ms] border-l-2 border-axiara-crimson pl-6">
+                    Governing the neural network of the modern world.
+                </h2>
+                <div class="animate-fade-in-up delay-[600ms] flex gap-6">
+                    <a href="#use-cases"
+                        class="inline-flex justify-center items-center bg-axiara-white text-axiara-obsidian border border-transparent font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-silver transition-colors">
+                        Explore Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE CHALLENGE -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <class="text-axiara-crimson font-code text-sm uppercase tracking-widest mb-4" class="text-axiara-silver font-code text-sm uppercase tracking-widest mb-4">The Challenge</h3>
+            <p class="text-3xl md:text-5xl font-phil text-axiara-white leading-tight">
+                "In a 5G world, decisions happen in milliseconds at the edge. Compliance cannot be an afterthought—it
+                must be embedded in the signal."
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. USE CASES (The Triad) -->
+    <section id="use-cases" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 space-y-32">
+
+            <!-- Use Case 1: 5G Slice Optimization -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group">
+                <div class="order-2 md:order-1 relative">
+                    <div
+                        class="absolute -inset-4 bg-axiara-signal-blue/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <div class="relative border border-axiara-white/10 p-8 bg-axiara-charcoal/50 backdrop-blur-sm">
+                        <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="network" class="w-12 h-12 text-axiara-signal-blue"></i>
+                            <span class="font-code text-xs text-axiara-silver">RL Model Audit</span>
+                        </div>
+                        <div class="space-y-4 font-code text-xs text-axiara-silver">
+                            <div class="flex justify-between border-b border-white/5 pb-2">
+                                <span>Latency Target</span>
+                                <span class="text-white">
+                                    < 5ms</span>
+                            </div>
+                            <div class="flex justify-between border-b border-white/5 pb-2">
+                                <span>Bandwidth Fairness</span>
+                                <span class="text-green-400">PASSED</span>
+                            </div>
+                            <div class="flex justify-between pb-2">
+                                <span>Priority Queue</span>
+                                <span class="text-white">Optimized</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-axiara-signal-blue font-code text-xs uppercase tracking-widest mb-2 block">01.
+                        Efficiency</span>
+                    <h3 class="text-4xl font-eng font-bold text-axiara-white mb-6">5G Slice Optimization</h3>
+                    <p class="text-axiara-silver leading-relaxed mb-6">
+                        Dynamic slicing manages critical bandwidth in real-time. Axiara audits the reinforcement
+                        learning models to ensure fair usage compliance and prevent service degradation for critical
+                        tiers.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-axiara-signal-blue mt-1"></i>
+                            <span class="text-sm text-axiara-silver">实时 (Real-time) bandwidth allocation audit.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-axiara-signal-blue mt-1"></i>
+                            <span class="text-sm text-axiara-silver">Prevent priority inversion risks.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Use Case 2: Churn Prediction -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group">
+                <div class="order-1">
+                    <class="text-axiara-crimson font-code text-xs uppercase tracking-widest mb-2 block" class="text-axiara-silver font-code text-xs uppercase tracking-widest mb-2 block">02.
+                        Retention</span>
+                    <h3 class="text-4xl font-eng font-bold text-axiara-white mb-6">Predictive Churn & Bias</h3>
+                    <p class="text-axiara-silver leading-relaxed mb-6">
+                        Identify at-risk subscribers without crossing ethical lines. We govern retention algorithms to
+                        ensure high-value offers aren't demographically skewed, protecting you from discrimination
+                        lawsuits.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-axiara-crimson mt-1"></i>
+                            <span class="text-sm text-axiara-silver">Algorithmic bias detection (Race/Location).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-axiara-crimson mt-1"></i>
+                            <span class="text-sm text-axiara-silver">Explainable retention offer logic.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-2 relative">
+                    <div
+                        class="absolute -inset-4 bg-axiara-crimson/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <div class="relative border border-axiara-white/10 p-8 bg-axiara-charcoal/50 backdrop-blur-sm">
+                        <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="users" class="w-12 h-12 text-axiara-crimson"></i>
+                            <span class="font-code text-xs text-axiara-silver">Retention Model</span>
+                        </div>
+                        <!-- Logic Map Visual -->
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="h-2 w-full bg-white/10 overflow-hidden">
+                                <div class="h-full bg-axiara-crimson w-[85%]"></div>
+                            </div>
+                            <span class="text-xs font-code text-white">Risk: 85%</span>
+                        </div>
+                        <div
+                            class="p-3 bg-red-900/20 border border-red-500/30 text-xs text-red-200 font-code flex items-center gap-2">
+                            <i data-lucide="alert-triangle" class="w-4 h-4"></i> ALERT: Potential demographic skew
+                            detected in "Premium Tier" offer distribution.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Case 3: Infrastructure Resilience -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group">
+                <div class="order-2 md:order-1 relative">
+                    <div
+                        class="absolute -inset-4 bg-white/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <div class="relative border border-axiara-white/10 p-8 bg-axiara-charcoal/50 backdrop-blur-sm">
+                        <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="tower-control" class="w-12 h-12 text-white"></i>
+                            <span class="font-code text-xs text-axiara-silver">Tower Health</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-black/40 border border-white/10 text-center">
+                                <span class="block text-2xl font-bold text-white mb-1">99.9%</span>
+                                <span class="text-xs text-gray-400">Uptime</span>
+                            </div>
+                            <div class="p-4 bg-black/40 border border-white/10 text-center">
+                                <span class="block text-2xl font-bold text-axiara-signal-blue mb-1">4h</span>
+                                <span class="text-xs text-gray-400">Pre-Fail Warn</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-white font-code text-xs uppercase tracking-widest mb-2 block">03.
+                        Resilience</span>
+                    <h3 class="text-4xl font-eng font-bold text-axiara-white mb-6">Predictive Maintenance</h3>
+                    <p class="text-axiara-silver leading-relaxed mb-6">
+                        Predict node failures before they cascade. Verify the integrity of sensor data inputs and
+                        maintenance schedules to minimize downtime and extend asset life.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. REGULATORY MATRIX -->
+    <section class="py-24 bg-axiara-gradient border-y border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-eng font-bold text-axiara-white mb-12 text-center">Compliance Dossier</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="p-8 border border-axiara-white/10 hover:border-axiara-signal-blue/50 transition-colors bg-axiara-obsidian/50">
+                    <h3 class="text-xl font-bold text-white mb-2">FCC CPNI</h3>
+                    <p class="text-sm text-axiara-silver mb-6 border-b border-white/10 pb-4">Protect customer
+                        proprietary network info.</p>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-axiara-signal-blue flex-shrink-0"></i>
+                        <span class="text-xs text-gray-300">Differential privacy filters on training data.</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="p-8 border border-axiara-white/10 hover:border-axiara-crimson/50 transition-colors bg-axiara-obsidian/50">
+                    <h3 class="text-xl font-bold text-white mb-2">GDPR / CCPA</h3>
+                    <p class="text-sm text-axiara-silver mb-6 border-b border-white/10 pb-4">Right to explanation & data
+                        sovereignty.</p>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-axiara-crimson flex-shrink-0"></i>
+                        <span class="text-xs text-gray-300">Episteme Logic Maps for every retention decision.</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="p-8 border border-axiara-white/10 hover:border-white/50 transition-colors bg-axiara-obsidian/50">
+                    <h3 class="text-xl font-bold text-white mb-2">Net Neutrality</h3>
+                    <p class="text-sm text-axiara-silver mb-6 border-b border-white/10 pb-4">Non-discriminatory traffic
+                        management.</p>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-white flex-shrink-0"></i>
+                        <span class="text-xs text-gray-300">Bias audits for traffic shaping algorithms.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CASE STUDY -->
+    <section class="py-24 bg-axiara-obsidian">
+        <div class="max-w-5xl mx-auto px-6 border-l-2 border-axiara-crimson pl-12 relative">
+            <span class="absolute -left-3 top-0 w-6 h-6 bg-axiara-obsidian border-2 border-axiara-crimson"></span>
+
+            <span class="font-code text-xs text-axiara-silver uppercase tracking-widest mb-4 block">Case Study: Tier-1
+                North American Carrier</span>
+            <h2 class="text-4xl md:text-5xl font-phil text-axiara-white mb-12">
+                "We were insulting our best customers with bad fraud flags. Axiara fixed the logic."
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <span class="block text-5xl font-eng font-bold text-axiara-signal-blue mb-2">90%</span>
+                    <span class="text-sm text-axiara-silver uppercase tracking-wide">Reduction in False Positives</span>
+                </div>
+                <div>
+                    <span class="block text-5xl font-eng font-bold text-axiara-white mb-2">$14M</span>
+                    <span class="text-sm text-axiara-silver uppercase tracking-wide">Annual Savings</span>
+                </div>
+                <div>
+                    <span class="block text-5xl font-eng font-bold text-axiara-crimson mb-2">0</span>
+                    <span class="text-sm text-axiara-silver uppercase tracking-wide">Regulatory Penalties</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-gradient text-center border-t border-axiara-crimson/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Secure your network intelligence.
+        </h2>
+        <a href="#"
+            class="inline-block bg-axiara-crimson text-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(196,30,58,0.4)]">
+            Schedule a Demo
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

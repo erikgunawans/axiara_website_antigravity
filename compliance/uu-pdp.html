@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance: UU PDP (Law No. 27/2022) | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            'privacy-green': '#0F9D58', // Privacy/Success Green
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(15,157,88,0.03) 0px, rgba(15,157,88,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-shield': 'pulseShield 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseShield: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 5px rgba(15,157,88,0.2))' },
+                            '50%': { filter: 'drop-shadow(0 0 15px rgba(15,157,88,0.5))' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Accordion transition */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+            /* Approximate max height */
+            opacity: 1;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: scaleY(-1);
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-privacy-green selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden text-center">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <!-- Privacy Shield Visual Background -->
+        <div
+            class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none scale-150 md:scale-100">
+            <svg width="500" height="600" viewBox="0 0 500 600" fill="none" class="animate-pulse-shield">
+                <path d="M250 50 L450 120 V250 C450 400 380 520 250 580 C120 520 50 400 50 250 V120 L250 50 Z"
+                    stroke="#0F9D58" stroke-width="2" fill="rgba(15,157,88,0.05)" />
+                <path d="M250 150 V450 M150 250 H350" stroke="#0F9D58" stroke-width="1" stroke-dasharray="10 10"
+                    opacity="0.5" />
+                <circle cx="250" cy="300" r="80" stroke="#0F9D58" stroke-width="2" />
+                <rect x="235" y="275" width="30" height="40" rx="5" stroke="#0F9D58" stroke-width="2" fill="none" />
+                <path d="M250 275 V265 M250 265 C260 265 265 255 250 255" stroke="#0F9D58" stroke-width="2" />
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span
+                class="inline-block font-code text-xs text-axiara-privacy-green uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-charcoal border border-axiara-privacy-green/20 px-3 py-1">
+                Compliance — Undang-Undang No. 27 Tahun 2022
+            </span>
+            <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-6 animate-fade-in-up delay-[200ms]">
+                Privasi<br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-axiara-privacy-green to-emerald-400">Terlindungi.</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-phil italic text-axiara-silver mb-10 animate-fade-in-up delay-[400ms]">
+                Protecting 270 million identities under one law.
+            </h2>
+            <div class="animate-fade-in-up delay-[600ms] flex justify-center gap-6">
+                <a href="#obligations"
+                    class="inline-flex justify-center items-center bg-transparent border border-axiara-privacy-green text-axiara-privacy-green font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-privacy-green hover:text-white transition-colors shadow-[0_0_15px_rgba(15,157,88,0.2)]">
+                    Review Article 35
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE LAW -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-axiara-privacy-green font-code text-sm uppercase tracking-widest mb-6">Accountability &
+                Notification</h3>
+            <h2 class="text-4xl md:text-5xl font-phil text-axiara-white leading-tight mb-8">
+                3x24 Hours To Report.
+            </h2>
+            <p class="text-lg text-axiara-silver leading-relaxed">
+                Under UU PDP, data controllers must notify the authority and data subjects within **72 hours** of a
+                breach. Failure to comply can result in administrative fines up to 2% of annual revenue or criminal
+                sanctions.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. CONTROLLER OBLIGATIONS (Article 35) -->
+    <section id="obligations" class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-eng font-bold text-axiara-white mb-12 text-center">Data Controller Obligations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Card 1 -->
+                <div
+                    class="bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-axiara-privacy-green/50 transition-colors">
+                    <i data-lucide="scale" class="w-8 h-8 text-axiara-privacy-green mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Lawful Basis</h3>
+                    <p class="text-xs text-axiara-silver leading-relaxed">
+                        Ensure explicit consent or legitimate interest exists for every processing activity.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-axiara-privacy-green/50 transition-colors">
+                    <i data-lucide="target" class="w-8 h-8 text-axiara-privacy-green mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Purpose Limitation</h3>
+                    <p class="text-xs text-axiara-silver leading-relaxed">
+                        Process data *only* for specific, explicitly stated purposes communicated to the subject.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-axiara-privacy-green/50 transition-colors">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-axiara-privacy-green mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Security Measures</h3>
+                    <p class="text-xs text-axiara-silver leading-relaxed">
+                        Implement technical and measures (encryption, access control) to prevent unauthorized access.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-axiara-obsidian border border-axiara-white/10 p-8 hover:border-axiara-crimson/50 transition-colors">
+                    <i data-lucide="siren" class="w-8 h-8 text-axiara-crimson mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Breach Notification</h3>
+                    <p class="text-xs text-axiara-silver leading-relaxed">
+                        Mandatory written notification to subjects and authorities within 3x24 hours of failure.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DATA SUBJECT RIGHTS (Interactive Accordion) -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-eng font-bold text-axiara-white mb-12 text-center">Data Subject Rights</h2>
+
+            <div class="space-y-4">
+
+                <!-- Item 1 -->
+                <div class="accordion-item bg-gray-900 border border-axiara-white/10">
+                    <button
+                        class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-colors"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="eye" class="text-axiara-privacy-green w-5 h-5"></i>
+                            <span class="font-bold text-white">Right to Access</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon text-gray-500 w-5 h-5"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-black/50">
+                        <div class="pb-6 pt-2 text-sm text-axiara-silver">
+                            Data subjects have the right to request a copy of their personal data and understand how it
+                            is being processed. Organizations must respond within the statutory period.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="accordion-item bg-gray-900 border border-axiara-white/10">
+                    <button
+                        class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-colors"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="pencil" class="text-axiara-privacy-green w-5 h-5"></i>
+                            <span class="font-bold text-white">Right to Correction</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon text-gray-500 w-5 h-5"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-black/50">
+                        <div class="pb-6 pt-2 text-sm text-axiara-silver">
+                            Subjects can request rectification of inaccurate, incomplete, or outdated personal data.
+                            Controllers must verify and update the records immediately.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="accordion-item bg-gray-900 border border-axiara-white/10">
+                    <button
+                        class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-colors"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="trash-2" class="text-axiara-privacy-green w-5 h-5"></i>
+                            <span class="font-bold text-white">Right to Erasure</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon text-gray-500 w-5 h-5"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-black/50">
+                        <div class="pb-6 pt-2 text-sm text-axiara-silver">
+                            Data subjects may request deletion of their data once the purpose of processing is achieved,
+                            consent is withdrawn, or processing is unlawful.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="accordion-item bg-gray-900 border border-axiara-white/10">
+                    <button
+                        class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-colors"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="arrow-right-left" class="text-axiara-privacy-green w-5 h-5"></i>
+                            <span class="font-bold text-white">Right to Portability</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon text-gray-500 w-5 h-5"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-black/50">
+                        <div class="pb-6 pt-2 text-sm text-axiara-silver">
+                            Subjects have the right to receive their data in a structured, commonly used formatting and
+                            transmit it to another controller.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. COMPLIANCE CHECKLIST (Readiness Meter) -->
+    <section class="py-24 bg-axiara-gradient">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-eng font-bold text-axiara-white mb-6">Are You Ready?</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-6 h-6 border border-axiara-privacy-green bg-axiara-privacy-green flex items-center justify-center">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                        </div>
+                        <span class="text-white">Appoint a DPO (Data Protection Officer)</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-6 h-6 border border-axiara-privacy-green bg-transparent flex items-center justify-center">
+                        </div>
+                        <span class="text-gray-400">Conduct a DPIA (Impact Assessment)</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-6 h-6 border border-axiara-privacy-green bg-transparent flex items-center justify-center">
+                        </div>
+                        <span class="text-gray-400">Map Cross-Border Transfers</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-6 h-6 border border-axiara-privacy-green bg-transparent flex items-center justify-center">
+                        </div>
+                        <span class="text-gray-400">Maintain a ROPA (Record of Processing)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Visual Gauge -->
+            <div
+                class="relative bg-axiara-charcoal border border-axiara-white/10 p-10 flex flex-col items-center justify-center">
+                <div
+                    class="w-40 h-40 border-8 border-gray-700 border-t-axiara-privacy-green border-r-axiara-privacy-green flex items-center justify-center mb-4">
+                    <span class="text-4xl font-black text-white">25%</span>
+                </div>
+                <span class="text-xs font-code text-axiara-silver uppercase tracking-widest">Compliance Score</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-obsidian text-center border-t border-axiara-privacy-green/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Appoint your DPO.
+        </h2>
+        <a href="#"
+            class="inline-flex items-center bg-axiara-privacy-green text-white font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-emerald-600 transition-colors shadow-[0_0_20px_rgba(15,157,88,0.4)]">
+            <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i> Get UU PDP Certified
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader & Interactive Scripts -->
+    <script>
+        // Accordion Logic
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const content = button.nextElementSibling;
+
+            // Close others (optional - standard accordion behavior)
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            item.classList.toggle('active');
+        }
+
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

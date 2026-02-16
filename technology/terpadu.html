@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTRJ Terpadu | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            glass: 'rgba(26,26,46,0.4)',
+                            'glass-hover': 'rgba(26,26,46,0.8)',
+                            'crimson-glow': 'rgba(196,30,58,0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(196,30,58,0.03) 0px, rgba(196,30,58,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-node': 'pulseNode 2s infinite ease-in-out',
+                        'rotate-slow': 'rotateSlow 60s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseNode: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.5' },
+                            '50%': { transform: 'scale(1.2)', opacity: '1' },
+                        },
+                        rotateSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Network Visual Background */
+        .network-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(196, 30, 58, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Integration Hover Effect */
+        .connector-card:hover .connector-icon {
+            color: #C41E3A;
+            transform: scale(1.1);
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-crimson selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden text-center">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <!-- Dynamic Node Network Background (Simulated) -->
+        <div class="network-bg animate-rotate-slow opacity-20 hidden md:block">
+            <div class="absolute top-0 left-1/2 w-2 h-2 bg-axiara-crimson animate-pulse-node"></div>
+            <div class="absolute bottom-0 left-1/2 w-2 h-2 bg-axiara-silver animate-pulse-node"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute left-0 top-1/2 w-2 h-2 bg-axiara-silver animate-pulse-node"
+                style="animation-delay: 0.5s;"></div>
+            <div class="absolute right-0 top-1/2 w-2 h-2 bg-axiara-crimson animate-pulse-node"
+                style="animation-delay: 1.5s;"></div>
+            <div class="absolute inset-8 border border-axiara-white/5"></div>
+            <div class="absolute inset-32 border border-axiara-white/5"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <class="inline-block font-code text-xs text-axiara-crimson uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-crimson-glowpx-3 py-1" class="inline-block font-code text-xs text-axiara-silver uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-crimson-glowpx-3 py-1">
+                Technology — Integration Hub
+            </span>
+            <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-4 animate-fade-in-up delay-[200ms]">
+                NTRJ Terpadu
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-phil italic text-axiara-silver mb-8 animate-fade-in-up delay-[400ms]">
+                The Neural Fabric
+            </h2>
+            <p
+                class="font-eng font-light text-axiara-silver text-lg max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up delay-[600ms]">
+                Unified orchestration for fragment enterprise data. Connect every silo, govern every flow, secure every
+                output.
+            </p>
+            <div class="animate-fade-in-up delay-[800ms] flex justify-center gap-4">
+                <a href="#matrix"
+                    class="inline-flex justify-center items-center border border-axiara-crimson text-axiara-white font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-crimson hover:text-white transition-colors shadow-[0_0_15px_rgba(196,30,58,0.2)]">
+                    Explore Integrations <i data-lucide="network" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. INTEGRATION MATRIX (4x4 Grid) -->
+    <section id="matrix" class="py-24 bg-axiara-obsidian border-b border-axiara-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-eng font-bold text-axiara-white mb-4">The Connector Ecosystem</h2>
+                <p class="text-axiara-silver font-light">Pre-built secure connectors for the modern enterprise stack.
+                </p>
+            </div>
+
+            <!-- 4x4 Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 border-t border-l border-axiara-white/10">
+
+                <!-- Row 1: Data Sources -->
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="database"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Snowflake</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="hard-drive"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Oracle</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="server"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span
+                        class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Databricks</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="cloud"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">S3 /
+                        Fabric</span>
+                </div>
+
+                <!-- Row 2: Business Apps -->
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="briefcase"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span
+                        class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Salesforce</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="factory"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">SAP
+                        S/4HANA</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="users"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Workday</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="shopping-cart"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span
+                        class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">ServiceNow</span>
+                </div>
+
+                <!-- Row 3: AI Models -->
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="cpu"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">OpenAI</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="brain-circuit"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Anthropic</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="code-2"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Llama 3</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="globe"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Mistral</span>
+                </div>
+
+                <!-- Row 4: Security/Comms -->
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="shield-check"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Okta</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="key"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Auth0</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="slack"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Slack</span>
+                </div>
+                <div
+                    class="connector-card p-8 border-r border-b border-axiara-white/10 flex flex-col items-center justify-center hover:bg-white/5 transition-colors cursor-pointer group h-40">
+                    <i data-lucide="mail"
+                        class="connector-icon w-8 h-8 text-axiara-silver mb-3 transition-all duration-300"></i>
+                    <span
+                        class="font-code text-xs text-axiara-silver group-hover:text-white uppercase">Email/SMTP</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ENTERPRISE SECURITY -->
+    <section class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+            <!-- Content -->
+            <div>
+                <h2 class="text-3xl font-eng font-bold text-axiara-white mb-8">
+                    Your architecture. <br> <span class="text-axiara-crimson">Zero Trust standards.</span>
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex gap-4">
+                        <i data-lucide="check-circle" class="text-axiara-crimson w-6 h-6 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-axiara-white mb-2">Zero Trust Architecture</h4>
+                            <p class="font-light text-axiara-silver text-sm">"Never trust, always verify" applied to
+                                every API call and data packet.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i data-lucide="lock" class="text-axiara-crimson w-6 h-6 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-axiara-white mb-2">Military-Grade Encryption</h4>
+                            <p class="font-light text-axiara-silver text-sm">AES-256 encryption at rest. TLS 1.3
+                                enforced in transit.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i data-lucide="file-text" class="text-axiara-crimson w-6 h-6 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-axiara-white mb-2">Immutable Audit Logs</h4>
+                            <p class="font-light text-axiara-silver text-sm">Every system action is cryptographically
+                                signed and logged for compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Visual Abstract -->
+            <div
+                class="relative h-96 bg-axiara-charcoal/30 border border-axiara-white/5 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-[url('/assets/images/grid.png')] opacity-10"></div>
+                <!-- Shield/Lock Icon glowing -->
+                <div
+                    class="relative z-10 p-12 bg-axiara-obsidian border border-axiara-crimson/30 shadow-[0_0_50px_rgba(196,30,58,0.2)]">
+                    <i data-lucide="shield" class="w-16 h-16 text-axiara-crimson"></i>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-64 h-64 border border-axiara-white/10 animate-ping opacity-20"
+                        style="animation-duration: 3s"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. ORCHESTRATION & API -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-eng font-bold text-axiara-white mb-4">Unified Orchestration</h2>
+                <p class="text-axiara-silver font-light">Build visually. Deploy via API. Control everything.</p>
+            </div>
+
+            <!-- Split Screen Visual -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-axiara-white/10 shadow-2xl">
+
+                <!-- Left: Visual Builder Mockup -->
+                <div
+                    class="bg-[#1e1e2e] p-8 border-b lg:border-b-0 lg:border-r border-axiara-white/10 relative overflow-hidden group">
+                    <div class="absolute top-4 left-4 flex gap-2">
+                        <div class="w-3 h-3 bg-red-500"></div>
+                        <div class="w-3 h-3 bg-yellow-500"></div>
+                        <div class="w-3 h-3 bg-green-500"></div>
+                    </div>
+                    <div class="mt-8 space-y-4">
+                        <!-- Mock Nodes -->
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-blue-900/20 border border-blue-500/50 flex items-center justify-center">
+                                <i data-lucide="file-text" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div class="h-[1px] w-8 bg-gray-600"></div>
+                            <div
+                                class="w-12 h-12 bg-purple-900/20 border border-purple-500/50 flex items-center justify-center relative">
+                                <i data-lucide="brain-circuit" class="text-purple-400 w-6 h-6"></i>
+                                <div
+                                    class="absolute -top-2 -right-2 w-4 h-4 bg-green-500 border-2 border-[#1e1e2e]">
+                                </div>
+                            </div>
+                            <div class="h-[1px] w-8 bg-gray-600"></div>
+                            <div
+                                class="w-12 h-12 bg-red-900/20 border border-red-500/50 flex items-center justify-center">
+                                <i data-lucide="shield-check" class="text-red-400 w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white/5 border border-white/10 text-xs font-code text-gray-400">
+                            > Workflow: Compliance Audit v2.1<br>
+                            > Status: <span class="text-green-400">Active</span><br>
+                            > Last Run: 2 mins ago
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: API JSON -->
+                <div class="bg-[#11111b] p-8 font-code text-sm text-gray-400 overflow-x-auto">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                        <span class="text-green-400">POST</span>
+                        <span class="text-gray-500">/api/v1/terpadu/workflow/execute</span>
+                    </div>
+                    <pre>
+<span class="text-purple-400">{</span>
+  <span class="text-blue-400">"workflow_id"</span>: <span class="text-green-400">"wf_8823_audit"</span>,
+  <span class="text-blue-400">"inputs"</span>: <span class="text-purple-400">{</span>
+    <span class="text-blue-400">"document_id"</span>: <span class="text-green-400">"doc_9912"</span>,
+    <span class="text-blue-400">"compliance_check"</span>: <span class="text-yellow-400">true</span>,
+    <span class="text-blue-400">"priority"</span>: <span class="text-green-400">"high"</span>
+  <span class="text-purple-400">}</span>,
+  <span class="text-blue-400">"callback_url"</span>: <span class="text-green-400">"https://api.corp.com/webhook"</span>
+<span class="text-purple-400">}</span>
+</pre>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-gradient text-center border-t border-axiara-crimson/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Connect your enterprise.
+        </h2>
+        <a href="#"
+            class="inline-block bg-axiara-white text-axiara-obsidian font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-axiara-silver transition-colors">
+            Request API Access
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('

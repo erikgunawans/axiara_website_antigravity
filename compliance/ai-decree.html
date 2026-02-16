@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance: AI Decree (SE No. 9/2023) | Axiara Risk & Compliance</title>
+    <!-- Tailwind CDN with Axiara Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        axiara: {
+                            obsidian: '#0D0D0D',
+                            crimson: '#C41E3A',
+                            white: '#FFFFFF',
+                            silver: '#A8A8A8',
+                            charcoal: '#1A1A2E',
+                            'ethical-gold': '#D4AF37', // Gold for Ethics/Value
+                        }
+                    },
+                    fontFamily: {
+                        eng: ['Outfit', 'sans-serif'],
+                        phil: ['Playfair Display', 'serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: { FULL: '0px' },
+                    backgroundImage: {
+                        'axiara-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 100%)',
+                        'axiara-weave': 'repeating-linear-gradient(45deg, rgba(212,175,55,0.03) 0px, rgba(212,175,55,0.03) 1px, transparent 1px, transparent 10px)',
+                    },
+                    letterSpacing: {
+                        'axiara-wide': '0.05em',
+                        'axiara-label': '2px',
+                        'axiara-pretitle': '3px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-node': 'pulseNode 3s infinite',
+                        'flow-line': 'flowLine 2s infinite linear',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseNode: {
+                            '0%, 100%': { r: '3', fill: '#D4AF37' },
+                            '50%': { r: '5', fill: '#FFF' },
+                        },
+                        flowLine: {
+                            '0%': { strokeDashoffset: '100' },
+                            '100%': { strokeDashoffset: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: var(--axiara-gradient);
+        }
+
+        .weave-bg {
+            background-image: var(--axiara-weave);
+        }
+
+        /* Gauge Needle Animation */
+        .gauge-needle {
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: bottom center;
+        }
+
+        /* Node Connectivity Visual */
+        .node-network path {
+            vector-effect: non-scaling-stroke;
+        }
+    </style>
+<link rel="stylesheet" href="/src/css/axiara.css">
+</head>
+
+<body class="bg-axiara-obsidian text-axiara-silver font-eng selection:bg-axiara-ethical-gold selection:text-black">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-axiara-crimson text-white px-4 py-2 z-50 font-code text-sm">Skip to content</a>
+
+    <!-- NAVBAR Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header id="main-content" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden text-center">
+        <div class="absolute inset-0 weave-bg opacity-20 pointer-events-none"></div>
+
+        <!-- Neural Network Visual Background -->
+        <div
+            class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none scale-125 md:scale-100">
+            <svg width="800" height="600" viewBox="0 0 800 600" fill="none" class="node-network">
+                <!-- Nodes -->
+                <circle cx="200" cy="150" r="4" fill="#333" class="animate-pulse-node" style="animation-delay: 0s;" />
+                <circle cx="600" cy="150" r="4" fill="#333" class="animate-pulse-node" style="animation-delay: 0.5s;" />
+                <circle cx="400" cy="300" r="6" fill="#D4AF37" class="animate-pulse-node"
+                    style="animation-delay: 1s;" /> <!-- Central Ethics Node -->
+                <circle cx="200" cy="450" r="4" fill="#333" class="animate-pulse-node" style="animation-delay: 1.5s;" />
+                <circle cx="600" cy="450" r="4" fill="#333" class="animate-pulse-node" style="animation-delay: 2s;" />
+
+                <!-- Connections (Ethical Gold Guardrails) -->
+                <line x1="200" y1="150" x2="400" y2="300" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5 5"
+                    opacity="0.5" />
+                <line x1="600" y1="150" x2="400" y2="300" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5 5"
+                    opacity="0.5" />
+                <line x1="200" y1="450" x2="400" y2="300" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5 5"
+                    opacity="0.5" />
+                <line x1="600" y1="450" x2="400" y2="300" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5 5"
+                    opacity="0.5" />
+
+                <!-- Helper Lines -->
+                <line x1="200" y1="150" x2="200" y2="450" stroke="#333" stroke-width="1" opacity="0.3" />
+                <line x1="600" y1="150" x2="600" y2="450" stroke="#333" stroke-width="1" opacity="0.3" />
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span
+                class="inline-block font-code text-xs text-axiara-ethical-gold uppercase tracking-axiara-pretitle mb-6 animate-fade-in-up bg-axiara-charcoal border border-axiara-ethical-gold/20 px-3 py-1">
+                Compliance — SE Menkominfo No. 9/2023
+            </span>
+            <h1 class="text-hero md: font-eng font-black text-axiara-white uppercase tracking-tight leading-none mb-6 animate-fade-in-up delay-[200ms]">
+                Etika<br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-axiara-ethical-gold to-yellow-200">Kecerdasan.</span>
+            </h1>
+            <h2
+                class="text-2xl md:text-3xl font-phil italic text-axiara-ethical-gold mb-10 animate-fade-in-up delay-[400ms]">
+                "Ethics is the new code."
+            </h2>
+            <div class="animate-fade-in-up delay-[600ms] flex justify-center gap-6">
+                <a href="#principles"
+                    class="inline-flex justify-center items-center bg-transparent border border-axiara-ethical-gold text-axiara-ethical-gold font-code text-xs uppercase tracking-axiara-label px-8 py-4 hover:bg-axiara-ethical-gold hover:text-black transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                    Explore Principles
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. THE CIRCULAR CTX -->
+    <section class="py-24 bg-axiara-obsidian border-b border-axiara-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-axiara-ethical-gold font-code text-sm uppercase tracking-widest mb-6">Soft Law, Hard
+                Consequences</h3>
+            <p class="text-lg text-axiara-silver leading-relaxed">
+                While Circular No. 9/2023 serves as an ethical guideline, non-compliance signals high risk for future
+                regulation. Axiara ensures your AI deployment respects <strong>Inclusivity</strong>,
+                <strong>Humanity</strong>, and <strong>Security</strong> before they become binding obligations.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. CORE PRINCIPLES (3 Pillars) -->
+    <section id="principles" class="py-24 bg-axiara-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2
+                class="text-3xl font-eng font-bold text-axiara-white mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+                The 3 Pillars of Ethical AI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Pillar 1 -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-ethical-gold/50 transition-all duration-500">
+                    <div
+                        class="absolute inset-0 bg-axiara-ethical-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <i data-lucide="scale" class="w-10 h-10 text-axiara-ethical-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Inclusivity <span
+                            class="block text-sm font-normal text-gray-500 font-phil italic">(Keadilan)</span></h3>
+                    <p class="text-sm text-axiara-silver leading-relaxed mb-6">
+                        AI must not discriminate against any individual or group. We audit training data for hidden
+                        biases to ensure fair outcomes for all demographics.
+                    </p>
+                    <ul class="text-xs font-code text-gray-500 space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center"><span class="w-1 h-1 bg-green-500 mr-2"></span>Bias
+                            Detection</li>
+                        <li class="flex items-center"><span class="w-1 h-1 bg-green-500 mr-2"></span>Fairness Metrics
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-ethical-gold/50 transition-all duration-500">
+                    <div
+                        class="absolute inset-0 bg-axiara-ethical-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <i data-lucide="brain-circuit" class="w-10 h-10 text-axiara-ethical-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Humanity <span
+                            class="block text-sm font-normal text-gray-500 font-phil italic">(Kemanusiaan)</span></h3>
+                    <p class="text-sm text-axiara-silver leading-relaxed mb-6">
+                        AI must protect human dignity and rights. We implement HITL (Human-in-the-Loop) workflows to
+                        ensure oversight on critical automated decisions.
+                    </p>
+                    <ul class="text-xs font-code text-gray-500 space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center"><span class="w-1 h-1 bg-green-500 mr-2"></span>Human
+                            Oversight</li>
+                        <li class="flex items-center"><span class="w-1 h-1 bg-green-500 mr-2"></span>Explainability
+                            (XAI)</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div
+                    class="group relative bg-axiara-obsidian border border-axiara-white/10 p-10 hover:border-axiara-ethical-gold/50 transition-all duration-500">
+                    <div
+                        class="absolute inset-0 bg-axiara-ethical-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <i data-lucide="shield-alert" class="w-10 h-10 text-axiara-ethical-gold mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Security <span
+                            class="block text-sm font-normal text-gray-500 font-phil italic">(Keamanan)</span></h3>
+                    <p class="text-sm text-axiara-silver leading-relaxed mb-6">
+                        AI systems must be robust against attacks. We conduct adversarial simulations to stress-test
+                        your models against manipulation and data poisoning.
+                    </p>
+                    <ul class="text-xs font-code text-gray-500 space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center"><span class="w-1 h-1 bg-green-500 mr-2"></span>Adversarial Tests
+                        </li>
+                        <li class="flex items-center"><span class="w-1 h-1 bg-green-500 mr-2"></span>Data
+                            Privacy</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. RISK MATRIX (Interactive Gauge) -->
+    <section class="py-24 bg-axiara-obsidian border-t border-axiara-white/5">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+            <!-- Content -->
+            <div>
+                <span
+                    class="inline-block text-axiara-ethical-gold font-code text-xs uppercase tracking-widest mb-4">Risk
+                    Management</span>
+                <h2 class="text-4xl font-eng font-bold text-axiara-white mb-6">Electronic System Providers (PSE)</h2>
+                <p class="text-axiara-silver mb-8 leading-relaxed">
+                    Under the decree, PSEs are responsible for the AI systems they deploy. Risk mitigation is not
+                    optional. Identify your risk level to determine the necessary safeguards.
+                </p>
+
+                <div class="space-y-4 font-code text-sm">
+                    <button onclick="setRisk('low')"
+                        class="block w-full text-left p-4 border border-axiara-white/10 hover:border-green-500 hover:bg-green-500/10 transition-colors -none flex justify-between items-center group">
+                        <span class="text-gray-300 group-hover:text-green-400">Low Risk (Administrative/Support)</span>
+                        <i data-lucide="check-circle"
+                            class="w-4 h-4 opacity-0 group-hover:opacity-100 text-green-400 transition-opacity"></i>
+                    </button>
+                    <button onclick="setRisk('medium')"
+                        class="block w-full text-left p-4 border border-axiara-white/10 hover:border-yellow-500 hover:bg-yellow-500/10 transition-colors -none flex justify-between items-center group">
+                        <span class="text-gray-300 group-hover:text-yellow-400">Medium Risk (Content
+                            Recommendation)</span>
+                        <i data-lucide="alert-triangle"
+                            class="w-4 h-4 opacity-0 group-hover:opacity-100 text-yellow-400 transition-opacity"></i>
+                    </button>
+                    <button onclick="setRisk('high')"
+                        class="block w-full text-left p-4 border border-axiara-white/10 hover:border-red-500 hover:bg-red-500/10 transition-colors -none flex justify-between items-center group">
+                        <span class="text-gray-300 group-hover:text-red-500">High Risk (Decision Making/Scoring)</span>
+                        <i data-lucide="siren"
+                            class="w-4 h-4 opacity-0 group-hover:opacity-100 text-red-500 transition-opacity"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visual Gauge -->
+            <div class="relative flex justify-center py-10">
+                <!-- Canvas for Gauge (CSS simplified version) -->
+                <!-- Linear Gauge Meter -->
+                <div class="w-full max-w-md">
+                    <div class="h-4 bg-gray-800 w-full relative">
+                        <!-- Sections -->
+                        <div class="absolute left-0 top-0 h-full bg-green-500/20 w-1/3 border-r border-black"></div>
+                        <div class="absolute left-[33.33%] top-0 h-full bg-yellow-500/20 w-1/3 border-r border-black">
+                        </div>
+                        <div class="absolute left-[66.66%] top-0 h-full bg-red-500/20 w-1/3"></div>
+
+                        <!-- Needle/Marker -->
+                        <div id="risk-marker" class="absolute top-0 bottom-0 w-1 bg-white transition-all duration-500"
+                            style="left: 0%">
+                            <div
+                                class="absolute -top-2 -left-1.5 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-white">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-10 text-center">
+                    <span id="risk-label"
+                        class="block font-code text-sm text-axiara-silver uppercase tracking-widest">Select Risk
+                        Level</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CASE STUDY -->
+    <section class="py-24 bg-axiara-gradient">
+        <div class="max-w-4xl mx-auto px-6 border border-axiara-ethical-gold/30 p-12 relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 p-4 bg-axiara-ethical-gold text-black font-code text-xs font-bold uppercase">
+                Case Study</div>
+            <h2 class="text-2xl font-phil italic text-axiara-white mb-6">"De-biasing the Black Box"</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-axiara-ethical-gold font-bold mb-2">Challenge</h3>
+                    <p class="text-sm text-axiara-silver mb-6">A major Fintech Lending Platform faced scrutiny over
+                        potential bias in their credit scoring AI.</p>
+                    <h3 class="text-axiara-ethical-gold font-bold mb-2">Axiara Solution</h3>
+                    <p class="text-sm text-axiara-silver">Full XAI (Explainable AI) Audit to visualize decision weights
+                        and remove discriminatory proxies.</p>
+                </div>
+                <div class="flex flex-col justify-center border-l-2 border-axiara-ethical-gold pl-8">
+                    <div class="text-5xl font-black text-white mb-2">100%</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest mb-6">SE No. 9 Alignment</div>
+                    <div class="text-5xl font-black text-white mb-2">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">Discrimination Findings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="py-24 bg-axiara-obsidian text-center border-t border-axiara-ethical-gold/20">
+        <h2 class="text-4xl font-phil italic text-axiara-white mb-8">
+            Deploy with Conscience.
+        </h2>
+        <a href="#"
+            class="inline-flex items-center bg-axiara-ethical-gold text-black font-code text-sm uppercase tracking-axiara-label px-12 py-5 hover:bg-yellow-500 transition-colors shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+            <i data-lucide="clipboard-check" class="w-4 h-4 mr-2"></i> Audit Your AI
+        </a>
+    </section>
+
+    <!-- FOOTER Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader & Interactive Scripts -->
+    <script>
+        // Risk Matrix Logic
+        function setRisk(level) {
+            const marker = document.getElementById('risk-marker');
+            const label = document.getElementById('risk-label');
+
+            if (level === 'low') {
+                marker.style.left = '16.66%';
+                label.innerText = 'Low: Admin/Support';
+                label.style.color = '#4ade80';
+            } else if (level === 'medium') {
+                marker.style.left = '50%';
+                label.innerText = 'Medium: Recommendation';
+                label.style.color = '#facc15';
+            } else if (level === 'high') {
+                marker.style.left = '83.33%';
+                label.innerText = 'High: Decision Making';
+                label.style.color = '#ef4444';
+            }
+        }
+
+        async function loadComponent(id, url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                const container = document.getElementById(id);
+                container.innerHTML = html;
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('
