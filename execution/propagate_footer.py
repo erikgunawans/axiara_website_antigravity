@@ -7,7 +7,11 @@ def propagate_footer():
         'about.html',
         'careers.html',
         'legal/privacy.html',
-        'legal/terms.html'
+        'legal/terms.html',
+        'services/index.html',
+        'technology/index.html',
+        'industries/index.html',
+        'compliance/index.html'
     ]
 
     # Read the Golden Master Footer
